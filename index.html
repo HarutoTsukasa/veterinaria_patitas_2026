@@ -1,1731 +1,2527 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" data-bs-theme="dark">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Veterinaria Patitas | Clínica veterinaria de barrio</title>
-<meta name="description" content="Clínica veterinaria de barrio: consultas, vacunas, cirugía, peluquería y urgencias 24h. Trato cercano y profesional para tu mascota. Pide cita online.">
-<meta name="theme-color" content="#0d9488">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Veterinaria Patitas | Clínica veterinaria de barrio</title>
+  <meta name="description"
+    content="Clínica veterinaria de barrio: consultas, vacunas, cirugía, peluquería y urgencias 24h. Trato cercano y profesional para tu mascota. Pide cita online.">
+  <meta name="theme-color" content="#0d9488">
 
-<!-- Bootstrap 5 + Iconos -->
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+  <!-- Bootstrap 5 + Iconos -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
 
-<!-- Tipografías -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Nunito:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <!-- Tipografías -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Nunito:wght@300;400;600;700;800&display=swap"
+    rel="stylesheet">
 
-<style>
-/* ============================================================
+  <style>
+    /* ============================================================
    1. VARIABLES Y BASE
    ============================================================ */
-:root{
-  --brand:#0d9488;
-  --brand-dark:#0b7a70;
-  --brand-light:#ccfbf1;
-  --accent:#ff7a59;
-  --accent-dark:#ef5f3c;
-  --ink:#0f2e2a;
-  --muted:#5f7a75;
-  --bg:#f6fbf9;
-  --white:#ffffff;
-  --radius:22px;
-  --radius-sm:16px;
-  --shadow:0 10px 30px rgba(13,148,136,.10);
-  --shadow-lg:0 22px 55px rgba(13,148,136,.18);
-  --transition:.35s cubic-bezier(.4,0,.2,1);
-}
+    :root {
+      --brand: #0d9488;
+      --brand-dark: #0b7a70;
+      --brand-light: #ccfbf1;
+      --accent: #ff7a59;
+      --accent-dark: #ef5f3c;
+      --ink: #0f2e2a;
+      --muted: #5f7a75;
+      --bg: #f6fbf9;
+      --white: #ffffff;
+      --radius: 22px;
+      --radius-sm: 16px;
+      --shadow: 0 10px 30px rgba(13, 148, 136, .10);
+      --shadow-lg: 0 22px 55px rgba(13, 148, 136, .18);
+      --transition: .35s cubic-bezier(.4, 0, .2, 1);
+    }
 
-html{
-  scroll-behavior:smooth;
-  scroll-padding-top:90px;
-}
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 90px;
+    }
 
-body{
-  font-family:'Nunito',system-ui,-apple-system,sans-serif;
-  color:var(--ink);
-  background:var(--bg);
-  overflow-x:hidden;
-  line-height:1.7;
-}
+    body {
+      font-family: 'Nunito', system-ui, -apple-system, sans-serif;
+      color: var(--ink);
+      background: var(--bg);
+      overflow-x: hidden;
+      line-height: 1.7;
+    }
 
-h1,h2,h3,h4,h5,.font-display{
-  font-family:'Baloo 2',cursive;
-  font-weight:700;
-  line-height:1.2;
-}
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    .font-display {
+      font-family: 'Baloo 2', cursive;
+      font-weight: 700;
+      line-height: 1.2;
+    }
 
-p{color:var(--muted);}
-a{text-decoration:none;}
-img{max-width:100%;}
+    p {
+      color: var(--muted);
+    }
 
-::selection{background:var(--brand);color:#fff;}
+    a {
+      text-decoration: none;
+    }
 
-/* Scrollbar */
-::-webkit-scrollbar{width:10px;}
-::-webkit-scrollbar-track{background:#e7f5f1;}
-::-webkit-scrollbar-thumb{background:var(--brand);border-radius:10px;}
-::-webkit-scrollbar-thumb:hover{background:var(--brand-dark);}
+    img {
+      max-width: 100%;
+    }
 
-/* ============================================================
+    ::selection {
+      background: var(--brand);
+      color: #fff;
+    }
+
+    /* Scrollbar */
+    ::-webkit-scrollbar {
+      width: 10px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: #e7f5f1;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: var(--brand);
+      border-radius: 10px;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+      background: var(--brand-dark);
+    }
+
+    /* ============================================================
    2. UTILIDADES
    ============================================================ */
-.section{padding:95px 0;}
-.section-sm{padding:70px 0;}
+    .section {
+      padding: 95px 0;
+    }
 
-.text-brand{color:var(--brand)!important;}
-.text-accent{color:var(--accent)!important;}
-.bg-brand{background:var(--brand)!important;}
-.bg-soft{background:linear-gradient(180deg,#eefaf7 0%,#f6fbf9 100%);}
+    .section-sm {
+      padding: 70px 0;
+    }
 
-.section-label{
-  display:inline-flex;
-  align-items:center;
-  gap:.5rem;
-  background:var(--brand-light);
-  color:var(--brand-dark);
-  font-weight:800;
-  font-size:.78rem;
-  letter-spacing:.12em;
-  text-transform:uppercase;
-  padding:.45rem 1.1rem;
-  border-radius:50px;
-  margin-bottom:1rem;
-}
+    .text-brand {
+      color: var(--brand) !important;
+    }
 
-.section-title{
-  font-size:clamp(1.9rem,4vw,2.8rem);
-  margin-bottom:1rem;
-}
+    .text-accent {
+      color: var(--accent) !important;
+    }
 
-.section-subtitle{
-  max-width:620px;
-  margin:0 auto;
-  font-size:1.05rem;
-}
+    .bg-brand {
+      background: var(--brand) !important;
+    }
 
-.divider-wave{
-  display:block;
-  width:100%;
-  height:auto;
-  margin-bottom:-1px;
-}
+    .bg-soft {
+      background: linear-gradient(180deg, #eefaf7 0%, #f6fbf9 100%);
+    }
 
-/* Botones */
-.btn{
-  font-weight:800;
-  border-radius:50px;
-  padding:.8rem 1.9rem;
-  transition:var(--transition);
-  border:none;
-}
-.btn-brand{
-  background:var(--brand);
-  color:#fff;
-  box-shadow:0 8px 20px rgba(13,148,136,.25);
-}
-.btn-brand:hover,
-.btn-brand:focus{
-  background:var(--brand-dark);
-  color:#fff;
-  transform:translateY(-3px);
-  box-shadow:0 14px 30px rgba(13,148,136,.35);
-}
-.btn-accent{
-  background:var(--accent);
-  color:#fff;
-  box-shadow:0 8px 20px rgba(255,122,89,.3);
-}
-.btn-accent:hover,
-.btn-accent:focus{
-  background:var(--accent-dark);
-  color:#fff;
-  transform:translateY(-3px);
-  box-shadow:0 14px 30px rgba(255,122,89,.4);
-}
-.btn-outline-brand{
-  background:transparent;
-  color:var(--brand-dark);
-  border:2px solid var(--brand);
-}
-.btn-outline-brand:hover{
-  background:var(--brand);
-  color:#fff;
-  transform:translateY(-3px);
-}
-.btn-lg{padding:1rem 2.3rem;font-size:1.05rem;}
+    .section-label {
+      display: inline-flex;
+      align-items: center;
+      gap: .5rem;
+      background: var(--brand-light);
+      color: var(--brand-dark);
+      font-weight: 800;
+      font-size: .78rem;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      padding: .45rem 1.1rem;
+      border-radius: 50px;
+      margin-bottom: 1rem;
+    }
 
-/* ============================================================
+    .section-title {
+      font-size: clamp(1.9rem, 4vw, 2.8rem);
+      margin-bottom: 1rem;
+    }
+
+    .section-subtitle {
+      max-width: 620px;
+      margin: 0 auto;
+      font-size: 1.05rem;
+    }
+
+    .divider-wave {
+      display: block;
+      width: 100%;
+      height: auto;
+      margin-bottom: -1px;
+    }
+
+    /* Botones */
+    .btn {
+      font-weight: 800;
+      border-radius: 50px;
+      padding: .8rem 1.9rem;
+      transition: var(--transition);
+      border: none;
+    }
+
+    .btn-brand {
+      background: var(--brand);
+      color: #fff;
+      box-shadow: 0 8px 20px rgba(13, 148, 136, .25);
+    }
+
+    .btn-brand:hover,
+    .btn-brand:focus {
+      background: var(--brand-dark);
+      color: #fff;
+      transform: translateY(-3px);
+      box-shadow: 0 14px 30px rgba(13, 148, 136, .35);
+    }
+
+    .btn-accent {
+      background: var(--accent);
+      color: #fff;
+      box-shadow: 0 8px 20px rgba(255, 122, 89, .3);
+    }
+
+    .btn-accent:hover,
+    .btn-accent:focus {
+      background: var(--accent-dark);
+      color: #fff;
+      transform: translateY(-3px);
+      box-shadow: 0 14px 30px rgba(255, 122, 89, .4);
+    }
+
+    .btn-outline-brand {
+      background: transparent;
+      color: var(--brand-dark);
+      border: 2px solid var(--brand);
+    }
+
+    .btn-outline-brand:hover {
+      background: var(--brand);
+      color: #fff;
+      transform: translateY(-3px);
+    }
+
+    .btn-lg {
+      padding: 1rem 2.3rem;
+      font-size: 1.05rem;
+    }
+
+    /* ============================================================
    3. NAVBAR
    ============================================================ */
-.navbar{
-  padding:18px 0;
-  transition:var(--transition);
-  background:transparent;
-}
-.navbar.scrolled{
-  background:rgba(255,255,255,.96);
-  backdrop-filter:blur(12px);
-  -webkit-backdrop-filter:blur(12px);
-  box-shadow:0 6px 26px rgba(15,46,42,.09);
-  padding:10px 0;
-}
-.navbar-brand{
-  display:flex;
-  align-items:center;
-  gap:.65rem;
-  font-family:'Baloo 2',cursive;
-  font-weight:800;
-  font-size:1.45rem;
-  color:var(--ink)!important;
-  padding:0;
-}
-.brand-badge{
-  width:44px;height:44px;
-  border-radius:14px;
-  background:linear-gradient(135deg,var(--brand),#14b8a6);
-  color:#fff;
-  display:grid;place-items:center;
-  font-size:1.35rem;
-  box-shadow:0 8px 18px rgba(13,148,136,.32);
-}
-.brand-text small{
-  display:block;
-  font-family:'Nunito',sans-serif;
-  font-size:.62rem;
-  font-weight:700;
-  letter-spacing:.16em;
-  text-transform:uppercase;
-  color:var(--brand);
-  line-height:1;
-  margin-top:2px;
-}
-.navbar .nav-link{
-  font-weight:700;
-  color:var(--ink)!important;
-  margin:0 .3rem;
-  padding:.5rem .2rem!important;
-  position:relative;
-}
-.navbar .nav-link::after{
-  content:'';
-  position:absolute;
-  left:0;right:0;bottom:0;
-  height:3px;
-  border-radius:3px;
-  background:var(--accent);
-  transform:scaleX(0);
-  transform-origin:left;
-  transition:transform .3s ease;
-}
-.navbar .nav-link:hover::after,
-.navbar .nav-link.active::after{transform:scaleX(1);}
-.navbar .nav-link.active{color:var(--brand-dark)!important;}
+    .navbar {
+      padding: 18px 0;
+      transition: var(--transition);
+      background: transparent;
+    }
 
-.navbar-toggler{
-  border:none;
-  padding:.4rem .6rem;
-  font-size:1.5rem;
-  color:var(--brand-dark);
-  box-shadow:none!important;
-}
-.navbar-collapse{
-  background:#fff;
-  border-radius:var(--radius-sm);
-  padding:1rem;
-  margin-top:.8rem;
-  box-shadow:var(--shadow);
-}
-@media (min-width:992px){
-  .navbar-collapse{background:transparent;box-shadow:none;padding:0;margin-top:0;}
-}
+    .navbar.scrolled {
+      background: rgba(255, 255, 255, .96);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      box-shadow: 0 6px 26px rgba(15, 46, 42, .09);
+      padding: 10px 0;
+    }
 
-/* ============================================================
+    .navbar-brand {
+      display: flex;
+      align-items: center;
+      gap: .65rem;
+      font-family: 'Baloo 2', cursive;
+      font-weight: 800;
+      font-size: 1.45rem;
+      color: var(--ink) !important;
+      padding: 0;
+    }
+
+    .brand-badge {
+      width: 44px;
+      height: 44px;
+      border-radius: 14px;
+      background: linear-gradient(135deg, var(--brand), #14b8a6);
+      color: #fff;
+      display: grid;
+      place-items: center;
+      font-size: 1.35rem;
+      box-shadow: 0 8px 18px rgba(13, 148, 136, .32);
+    }
+
+    .brand-text small {
+      display: block;
+      font-family: 'Nunito', sans-serif;
+      font-size: .62rem;
+      font-weight: 700;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      color: var(--brand);
+      line-height: 1;
+      margin-top: 2px;
+    }
+
+    .navbar .nav-link {
+      font-weight: 700;
+      color: var(--ink) !important;
+      margin: 0 .3rem;
+      padding: .5rem .2rem !important;
+      position: relative;
+    }
+
+    .navbar .nav-link::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: 3px;
+      border-radius: 3px;
+      background: var(--accent);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform .3s ease;
+    }
+
+    .navbar .nav-link:hover::after,
+    .navbar .nav-link.active::after {
+      transform: scaleX(1);
+    }
+
+    .navbar .nav-link.active {
+      color: var(--brand-dark) !important;
+    }
+
+    .navbar-toggler {
+      border: none;
+      padding: .4rem .6rem;
+      font-size: 1.5rem;
+      color: var(--brand-dark);
+      box-shadow: none !important;
+    }
+
+    .navbar-collapse {
+      background: #fff;
+      border-radius: var(--radius-sm);
+      padding: 1rem;
+      margin-top: .8rem;
+      box-shadow: var(--shadow);
+    }
+
+    @media (min-width:992px) {
+      .navbar-collapse {
+        background: transparent;
+        box-shadow: none;
+        padding: 0;
+        margin-top: 0;
+      }
+    }
+
+    /* ============================================================
    4. HERO
    ============================================================ */
-.hero{
-  position:relative;
-  padding:165px 0 110px;
-  overflow:hidden;
-  background:linear-gradient(180deg,#e9f9f4 0%,#f6fbf9 100%);
-}
-.hero::before{
-  content:'';
-  position:absolute;
-  width:560px;height:560px;
-  border-radius:50%;
-  background:radial-gradient(circle,rgba(13,148,136,.20),transparent 68%);
-  top:-200px;right:-140px;
-  animation:float 9s ease-in-out infinite;
-}
-.hero::after{
-  content:'';
-  position:absolute;
-  width:430px;height:430px;
-  border-radius:50%;
-  background:radial-gradient(circle,rgba(255,122,89,.18),transparent 68%);
-  bottom:-190px;left:-150px;
-  animation:float 11s ease-in-out infinite reverse;
-}
-@keyframes float{
-  0%,100%{transform:translateY(0) scale(1);}
-  50%{transform:translateY(-26px) scale(1.05);}
-}
-.hero .container{position:relative;z-index:2;}
+    .hero {
+      position: relative;
+      padding: 165px 0 110px;
+      overflow: hidden;
+      background: linear-gradient(180deg, #e9f9f4 0%, #f6fbf9 100%);
+    }
 
-.hero-badge{
-  display:inline-flex;
-  align-items:center;
-  gap:.55rem;
-  background:#fff;
-  color:var(--brand-dark);
-  font-weight:800;
-  font-size:.82rem;
-  padding:.5rem 1.1rem;
-  border-radius:50px;
-  box-shadow:var(--shadow);
-  margin-bottom:1.4rem;
-}
-.hero-badge .dot{
-  width:9px;height:9px;
-  border-radius:50%;
-  background:#22c55e;
-  box-shadow:0 0 0 0 rgba(34,197,94,.7);
-  animation:pulse-dot 1.8s infinite;
-}
-@keyframes pulse-dot{
-  0%{box-shadow:0 0 0 0 rgba(34,197,94,.7);}
-  70%{box-shadow:0 0 0 10px rgba(34,197,94,0);}
-  100%{box-shadow:0 0 0 0 rgba(34,197,94,0);}
-}
+    .hero::before {
+      content: '';
+      position: absolute;
+      width: 560px;
+      height: 560px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(13, 148, 136, .20), transparent 68%);
+      top: -200px;
+      right: -140px;
+      animation: float 9s ease-in-out infinite;
+    }
 
-.hero h1{
-  font-size:clamp(2.3rem,5.2vw,3.9rem);
-  font-weight:800;
-  margin-bottom:1.2rem;
-  letter-spacing:-.5px;
-}
-.hero h1 .highlight{
-  color:var(--brand);
-  position:relative;
-  white-space:nowrap;
-}
-.hero h1 .highlight::after{
-  content:'';
-  position:absolute;
-  left:0;right:0;bottom:.08em;
-  height:.28em;
-  background:rgba(255,122,89,.28);
-  border-radius:6px;
-  z-index:-1;
-}
-.hero p.lead{
-  font-size:1.12rem;
-  max-width:520px;
-  margin-bottom:2rem;
-}
+    .hero::after {
+      content: '';
+      position: absolute;
+      width: 430px;
+      height: 430px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(255, 122, 89, .18), transparent 68%);
+      bottom: -190px;
+      left: -150px;
+      animation: float 11s ease-in-out infinite reverse;
+    }
 
-/* Imagen del hero */
-.hero-visual{position:relative;}
-.hero-img-wrap{
-  position:relative;
-  border-radius:36px 36px 36px 120px;
-  overflow:hidden;
-  box-shadow:var(--shadow-lg);
-  background:linear-gradient(135deg,var(--brand),#5eead4);
-  aspect-ratio:4/5;
-}
-.hero-img-wrap img{
-  width:100%;height:100%;
-  object-fit:cover;
-  display:block;
-}
-.hero-card{
-  position:absolute;
-  background:#fff;
-  border-radius:var(--radius-sm);
-  padding:.9rem 1.2rem;
-  box-shadow:0 16px 40px rgba(15,46,42,.14);
-  display:flex;
-  align-items:center;
-  gap:.8rem;
-  animation:float 6s ease-in-out infinite;
-}
-.hero-card i{
-  font-size:1.5rem;
-  color:var(--brand);
-}
-.hero-card strong{display:block;font-size:.95rem;line-height:1.2;}
-.hero-card span{font-size:.78rem;color:var(--muted);}
-.hero-card.card-1{top:8%;left:-22px;animation-delay:.5s;}
-.hero-card.card-2{bottom:12%;right:-22px;animation-delay:1.4s;}
-.hero-card.card-2 i{color:var(--accent);}
+    @keyframes float {
 
-@media (max-width:991px){
-  .hero{padding:140px 0 80px;}
-  .hero-card.card-1{left:0;}
-  .hero-card.card-2{right:0;}
-  .hero-img-wrap{max-width:440px;margin:2.5rem auto 0;aspect-ratio:1/1;}
-}
+      0%,
+      100% {
+        transform: translateY(0) scale(1);
+      }
 
-/* Barra de confianza */
-.trust-bar{
-  background:#fff;
-  border-radius:var(--radius);
-  box-shadow:var(--shadow);
-  padding:1.8rem 1rem;
-  margin-top:3.5rem;
-  position:relative;
-  z-index:3;
-}
-.trust-item{text-align:center;padding:.4rem .6rem;}
-.trust-item i{
-  font-size:1.7rem;
-  color:var(--brand);
-  display:block;
-  margin-bottom:.4rem;
-}
-.trust-item .num{
-  font-family:'Baloo 2',cursive;
-  font-size:1.6rem;
-  font-weight:800;
-  color:var(--ink);
-  line-height:1;
-}
-.trust-item .lbl{
-  font-size:.82rem;
-  color:var(--muted);
-  font-weight:600;
-}
-@media (max-width:767px){
-  .trust-item{border-bottom:1px solid #eef4f2;padding:.9rem;}
-  .trust-item:nth-last-child(-n+1){border-bottom:none;}
-}
+      50% {
+        transform: translateY(-26px) scale(1.05);
+      }
+    }
 
-/* ============================================================
+    .hero .container {
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: .55rem;
+      background: #fff;
+      color: var(--brand-dark);
+      font-weight: 800;
+      font-size: .82rem;
+      padding: .5rem 1.1rem;
+      border-radius: 50px;
+      box-shadow: var(--shadow);
+      margin-bottom: 1.4rem;
+    }
+
+    .hero-badge .dot {
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      background: #22c55e;
+      box-shadow: 0 0 0 0 rgba(34, 197, 94, .7);
+      animation: pulse-dot 1.8s infinite;
+    }
+
+    @keyframes pulse-dot {
+      0% {
+        box-shadow: 0 0 0 0 rgba(34, 197, 94, .7);
+      }
+
+      70% {
+        box-shadow: 0 0 0 10px rgba(34, 197, 94, 0);
+      }
+
+      100% {
+        box-shadow: 0 0 0 0 rgba(34, 197, 94, 0);
+      }
+    }
+
+    .hero h1 {
+      font-size: clamp(2.3rem, 5.2vw, 3.9rem);
+      font-weight: 800;
+      margin-bottom: 1.2rem;
+      letter-spacing: -.5px;
+    }
+
+    .hero h1 .highlight {
+      color: var(--brand);
+      position: relative;
+      white-space: nowrap;
+    }
+
+    .hero h1 .highlight::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: .08em;
+      height: .28em;
+      background: rgba(255, 122, 89, .28);
+      border-radius: 6px;
+      z-index: -1;
+    }
+
+    .hero p.lead {
+      font-size: 1.12rem;
+      max-width: 520px;
+      margin-bottom: 2rem;
+    }
+
+    /* Imagen del hero */
+    .hero-visual {
+      position: relative;
+    }
+
+    .hero-img-wrap {
+      position: relative;
+      border-radius: 36px 36px 36px 120px;
+      overflow: hidden;
+      box-shadow: var(--shadow-lg);
+      background: linear-gradient(135deg, var(--brand), #5eead4);
+      aspect-ratio: 4/5;
+    }
+
+    .hero-img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .hero-card {
+      position: absolute;
+      background: #fff;
+      border-radius: var(--radius-sm);
+      padding: .9rem 1.2rem;
+      box-shadow: 0 16px 40px rgba(15, 46, 42, .14);
+      display: flex;
+      align-items: center;
+      gap: .8rem;
+      animation: float 6s ease-in-out infinite;
+    }
+
+    .hero-card i {
+      font-size: 1.5rem;
+      color: var(--brand);
+    }
+
+    .hero-card strong {
+      display: block;
+      font-size: .95rem;
+      line-height: 1.2;
+    }
+
+    .hero-card span {
+      font-size: .78rem;
+      color: var(--muted);
+    }
+
+    .hero-card.card-1 {
+      top: 8%;
+      left: -22px;
+      animation-delay: .5s;
+    }
+
+    .hero-card.card-2 {
+      bottom: 12%;
+      right: -22px;
+      animation-delay: 1.4s;
+    }
+
+    .hero-card.card-2 i {
+      color: var(--accent);
+    }
+
+    @media (max-width:991px) {
+      .hero {
+        padding: 140px 0 80px;
+      }
+
+      .hero-card.card-1 {
+        left: 0;
+      }
+
+      .hero-card.card-2 {
+        right: 0;
+      }
+
+      .hero-img-wrap {
+        max-width: 440px;
+        margin: 2.5rem auto 0;
+        aspect-ratio: 1/1;
+      }
+    }
+
+    /* Barra de confianza */
+    .trust-bar {
+      background: #fff;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 1.8rem 1rem;
+      margin-top: 3.5rem;
+      position: relative;
+      z-index: 3;
+    }
+
+    .trust-item {
+      text-align: center;
+      padding: .4rem .6rem;
+    }
+
+    .trust-item i {
+      font-size: 1.7rem;
+      color: var(--brand);
+      display: block;
+      margin-bottom: .4rem;
+    }
+
+    .trust-item .num {
+      font-family: 'Baloo 2', cursive;
+      font-size: 1.6rem;
+      font-weight: 800;
+      color: var(--ink);
+      line-height: 1;
+    }
+
+    .trust-item .lbl {
+      font-size: .82rem;
+      color: var(--muted);
+      font-weight: 600;
+    }
+
+    @media (max-width:767px) {
+      .trust-item {
+        border-bottom: 1px solid #eef4f2;
+        padding: .9rem;
+      }
+
+      .trust-item:nth-last-child(-n+1) {
+        border-bottom: none;
+      }
+    }
+
+    /* ============================================================
    5. SERVICIOS
    ============================================================ */
-.service-card{
-  background:#fff;
-  border-radius:var(--radius);
-  padding:2.2rem 1.7rem;
-  height:100%;
-  border:1px solid rgba(13,148,136,.10);
-  transition:var(--transition);
-  position:relative;
-  overflow:hidden;
-}
-.service-card::before{
-  content:'';
-  position:absolute;
-  inset:auto -40% -70% auto;
-  width:180px;height:180px;
-  border-radius:50%;
-  background:var(--brand-light);
-  opacity:0;
-  transition:var(--transition);
-}
-.service-card:hover{
-  transform:translateY(-9px);
-  box-shadow:var(--shadow-lg);
-  border-color:transparent;
-}
-.service-card:hover::before{opacity:.55;}
-.service-card > *{position:relative;z-index:1;}
+    .service-card {
+      background: #fff;
+      border-radius: var(--radius);
+      padding: 2.2rem 1.7rem;
+      height: 100%;
+      border: 1px solid rgba(13, 148, 136, .10);
+      transition: var(--transition);
+      position: relative;
+      overflow: hidden;
+    }
 
-.service-icon{
-  width:64px;height:64px;
-  border-radius:18px;
-  display:grid;place-items:center;
-  font-size:1.7rem;
-  background:var(--brand-light);
-  color:var(--brand-dark);
-  margin-bottom:1.2rem;
-  transition:var(--transition);
-}
-.service-card:hover .service-icon{
-  background:var(--brand);
-  color:#fff;
-  transform:rotate(-8deg) scale(1.06);
-  box-shadow:0 10px 22px rgba(13,148,136,.3);
-}
-.service-card h3{font-size:1.25rem;margin-bottom:.6rem;}
-.service-card p{font-size:.94rem;margin-bottom:1rem;}
-.service-link{
-  font-weight:800;
-  font-size:.88rem;
-  color:var(--brand);
-  display:inline-flex;
-  align-items:center;
-  gap:.35rem;
-  transition:var(--transition);
-}
-.service-link i{transition:transform .3s ease;}
-.service-link:hover{color:var(--accent);}
-.service-link:hover i{transform:translateX(5px);}
+    .service-card::before {
+      content: '';
+      position: absolute;
+      inset: auto -40% -70% auto;
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      background: var(--brand-light);
+      opacity: 0;
+      transition: var(--transition);
+    }
 
-/* ============================================================
+    .service-card:hover {
+      transform: translateY(-9px);
+      box-shadow: var(--shadow-lg);
+      border-color: transparent;
+    }
+
+    .service-card:hover::before {
+      opacity: .55;
+    }
+
+    .service-card>* {
+      position: relative;
+      z-index: 1;
+    }
+
+    .service-icon {
+      width: 64px;
+      height: 64px;
+      border-radius: 18px;
+      display: grid;
+      place-items: center;
+      font-size: 1.7rem;
+      background: var(--brand-light);
+      color: var(--brand-dark);
+      margin-bottom: 1.2rem;
+      transition: var(--transition);
+    }
+
+    .service-card:hover .service-icon {
+      background: var(--brand);
+      color: #fff;
+      transform: rotate(-8deg) scale(1.06);
+      box-shadow: 0 10px 22px rgba(13, 148, 136, .3);
+    }
+
+    .service-card h3 {
+      font-size: 1.25rem;
+      margin-bottom: .6rem;
+    }
+
+    .service-card p {
+      font-size: .94rem;
+      margin-bottom: 1rem;
+    }
+
+    .service-link {
+      font-weight: 800;
+      font-size: .88rem;
+      color: var(--brand);
+      display: inline-flex;
+      align-items: center;
+      gap: .35rem;
+      transition: var(--transition);
+    }
+
+    .service-link i {
+      transition: transform .3s ease;
+    }
+
+    .service-link:hover {
+      color: var(--accent);
+    }
+
+    .service-link:hover i {
+      transform: translateX(5px);
+    }
+
+    /* ============================================================
    6. NOSOTROS
    ============================================================ */
-.about-visual{position:relative;padding:1.5rem;}
-.about-img{
-  border-radius:140px 32px 32px 32px;
-  overflow:hidden;
-  box-shadow:var(--shadow-lg);
-  background:linear-gradient(135deg,#5eead4,var(--brand));
-  aspect-ratio:1/1.05;
-}
-.about-img img{width:100%;height:100%;object-fit:cover;display:block;}
-.about-badge{
-  position:absolute;
-  bottom:0;right:0;
-  background:var(--accent);
-  color:#fff;
-  border-radius:24px;
-  padding:1.3rem 1.6rem;
-  text-align:center;
-  box-shadow:0 18px 40px rgba(255,122,89,.35);
-}
-.about-badge .n{
-  font-family:'Baloo 2',cursive;
-  font-size:2.1rem;
-  font-weight:800;
-  line-height:1;
-  display:block;
-}
-.about-badge span{font-size:.8rem;font-weight:700;opacity:.95;}
+    .about-visual {
+      position: relative;
+      padding: 1.5rem;
+    }
 
-.check-list{list-style:none;padding:0;margin:1.6rem 0 2rem;}
-.check-list li{
-  display:flex;
-  gap:.8rem;
-  align-items:flex-start;
-  margin-bottom:.9rem;
-  font-weight:600;
-  color:var(--ink);
-}
-.check-list li i{
-  flex-shrink:0;
-  width:26px;height:26px;
-  border-radius:50%;
-  background:var(--brand-light);
-  color:var(--brand-dark);
-  display:grid;place-items:center;
-  font-size:.85rem;
-  margin-top:.15rem;
-}
+    .about-img {
+      border-radius: 140px 32px 32px 32px;
+      overflow: hidden;
+      box-shadow: var(--shadow-lg);
+      background: linear-gradient(135deg, #5eead4, var(--brand));
+      aspect-ratio: 1/1.05;
+    }
 
-/* ============================================================
+    .about-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .about-badge {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      background: var(--accent);
+      color: #fff;
+      border-radius: 24px;
+      padding: 1.3rem 1.6rem;
+      text-align: center;
+      box-shadow: 0 18px 40px rgba(255, 122, 89, .35);
+    }
+
+    .about-badge .n {
+      font-family: 'Baloo 2', cursive;
+      font-size: 2.1rem;
+      font-weight: 800;
+      line-height: 1;
+      display: block;
+    }
+
+    .about-badge span {
+      font-size: .8rem;
+      font-weight: 700;
+      opacity: .95;
+    }
+
+    .check-list {
+      list-style: none;
+      padding: 0;
+      margin: 1.6rem 0 2rem;
+    }
+
+    .check-list li {
+      display: flex;
+      gap: .8rem;
+      align-items: flex-start;
+      margin-bottom: .9rem;
+      font-weight: 600;
+      color: var(--ink);
+    }
+
+    .check-list li i {
+      flex-shrink: 0;
+      width: 26px;
+      height: 26px;
+      border-radius: 50%;
+      background: var(--brand-light);
+      color: var(--brand-dark);
+      display: grid;
+      place-items: center;
+      font-size: .85rem;
+      margin-top: .15rem;
+    }
+
+    /* ============================================================
    7. EQUIPO
    ============================================================ */
-.team-card{
-  background:#fff;
-  border-radius:var(--radius);
-  overflow:hidden;
-  box-shadow:var(--shadow);
-  transition:var(--transition);
-  height:100%;
-  text-align:center;
-}
-.team-card:hover{transform:translateY(-8px);box-shadow:var(--shadow-lg);}
-.team-photo{
-  aspect-ratio:1/1;
-  overflow:hidden;
-  background:linear-gradient(135deg,var(--brand-light),#e6fffb);
-  display:grid;place-items:center;
-}
-.team-photo img{width:100%;height:100%;object-fit:cover;transition:transform .5s ease;}
-.team-card:hover .team-photo img{transform:scale(1.07);}
-.team-photo .placeholder-icon{font-size:4.5rem;color:var(--brand);opacity:.5;}
-.team-body{padding:1.4rem 1.2rem 1.6rem;}
-.team-body h4{font-size:1.15rem;margin-bottom:.15rem;}
-.team-body .role{
-  font-size:.84rem;
-  font-weight:800;
-  color:var(--accent);
-  text-transform:uppercase;
-  letter-spacing:.06em;
-  display:block;
-  margin-bottom:.6rem;
-}
-.team-body p{font-size:.9rem;margin-bottom:0;}
+    .team-card {
+      background: #fff;
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      transition: var(--transition);
+      height: 100%;
+      text-align: center;
+    }
 
-/* ============================================================
+    .team-card:hover {
+      transform: translateY(-8px);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .team-photo {
+      aspect-ratio: 1/1;
+      overflow: hidden;
+      background: linear-gradient(135deg, var(--brand-light), #e6fffb);
+      display: grid;
+      place-items: center;
+    }
+
+    .team-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform .5s ease;
+    }
+
+    .team-card:hover .team-photo img {
+      transform: scale(1.07);
+    }
+
+    .team-photo .placeholder-icon {
+      font-size: 4.5rem;
+      color: var(--brand);
+      opacity: .5;
+    }
+
+    .team-body {
+      padding: 1.4rem 1.2rem 1.6rem;
+    }
+
+    .team-body h4 {
+      font-size: 1.15rem;
+      margin-bottom: .15rem;
+    }
+
+    .team-body .role {
+      font-size: .84rem;
+      font-weight: 800;
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: .06em;
+      display: block;
+      margin-bottom: .6rem;
+    }
+
+    .team-body p {
+      font-size: .9rem;
+      margin-bottom: 0;
+    }
+
+    /* ============================================================
    8. TESTIMONIOS
    ============================================================ */
-.testimonial-card{
-  background:#fff;
-  border-radius:var(--radius);
-  padding:2rem 1.8rem;
-  height:100%;
-  box-shadow:var(--shadow);
-  position:relative;
-  transition:var(--transition);
-}
-.testimonial-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-lg);}
-.testimonial-card .quote-icon{
-  position:absolute;
-  top:1.2rem;right:1.5rem;
-  font-size:3rem;
-  color:var(--brand-light);
-  line-height:1;
-}
-.stars{color:#fbbf24;font-size:.95rem;margin-bottom:.9rem;letter-spacing:2px;}
-.testimonial-card p{
-  font-size:.95rem;
-  color:var(--ink);
-  font-style:italic;
-  margin-bottom:1.3rem;
-}
-.testimonial-author{display:flex;align-items:center;gap:.8rem;}
-.testimonial-author .avatar{
-  width:46px;height:46px;
-  border-radius:50%;
-  background:var(--brand);
-  color:#fff;
-  display:grid;place-items:center;
-  font-weight:800;
-  font-family:'Baloo 2',cursive;
-  font-size:1.1rem;
-  flex-shrink:0;
-}
-.testimonial-author strong{display:block;font-size:.95rem;line-height:1.2;}
-.testimonial-author span{font-size:.8rem;color:var(--muted);}
+    .testimonial-card {
+      background: #fff;
+      border-radius: var(--radius);
+      padding: 2rem 1.8rem;
+      height: 100%;
+      box-shadow: var(--shadow);
+      position: relative;
+      transition: var(--transition);
+    }
 
-/* ============================================================
+    .testimonial-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .testimonial-card .quote-icon {
+      position: absolute;
+      top: 1.2rem;
+      right: 1.5rem;
+      font-size: 3rem;
+      color: var(--brand-light);
+      line-height: 1;
+    }
+
+    .stars {
+      color: #fbbf24;
+      font-size: .95rem;
+      margin-bottom: .9rem;
+      letter-spacing: 2px;
+    }
+
+    .testimonial-card p {
+      font-size: .95rem;
+      color: var(--ink);
+      font-style: italic;
+      margin-bottom: 1.3rem;
+    }
+
+    .testimonial-author {
+      display: flex;
+      align-items: center;
+      gap: .8rem;
+    }
+
+    .testimonial-author .avatar {
+      width: 46px;
+      height: 46px;
+      border-radius: 50%;
+      background: var(--brand);
+      color: #fff;
+      display: grid;
+      place-items: center;
+      font-weight: 800;
+      font-family: 'Baloo 2', cursive;
+      font-size: 1.1rem;
+      flex-shrink: 0;
+    }
+
+    .testimonial-author strong {
+      display: block;
+      font-size: .95rem;
+      line-height: 1.2;
+    }
+
+    .testimonial-author span {
+      font-size: .8rem;
+      color: var(--muted);
+    }
+
+    /* ============================================================
    9. CTA
    ============================================================ */
-.cta-box{
-  background:linear-gradient(135deg,var(--brand-dark) 0%,var(--brand) 55%,#14b8a6 100%);
-  border-radius:32px;
-  padding:3.5rem 2.5rem;
-  color:#fff;
-  position:relative;
-  overflow:hidden;
-  box-shadow:var(--shadow-lg);
-}
-.cta-box::before{
-  content:'';
-  position:absolute;
-  width:340px;height:340px;
-  border-radius:50%;
-  background:rgba(255,255,255,.08);
-  top:-130px;right:-80px;
-}
-.cta-box::after{
-  content:'';
-  position:absolute;
-  width:220px;height:220px;
-  border-radius:50%;
-  background:rgba(255,255,255,.07);
-  bottom:-110px;left:5%;
-}
-.cta-box > *{position:relative;z-index:1;}
-.cta-box h2{color:#fff;font-size:clamp(1.7rem,3.5vw,2.5rem);}
-.cta-box p{color:rgba(255,255,255,.88);margin-bottom:0;}
+    .cta-box {
+      background: linear-gradient(135deg, var(--brand-dark) 0%, var(--brand) 55%, #14b8a6 100%);
+      border-radius: 32px;
+      padding: 3.5rem 2.5rem;
+      color: #fff;
+      position: relative;
+      overflow: hidden;
+      box-shadow: var(--shadow-lg);
+    }
 
-/* ============================================================
+    .cta-box::before {
+      content: '';
+      position: absolute;
+      width: 340px;
+      height: 340px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, .08);
+      top: -130px;
+      right: -80px;
+    }
+
+    .cta-box::after {
+      content: '';
+      position: absolute;
+      width: 220px;
+      height: 220px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, .07);
+      bottom: -110px;
+      left: 5%;
+    }
+
+    .cta-box>* {
+      position: relative;
+      z-index: 1;
+    }
+
+    .cta-box h2 {
+      color: #fff;
+      font-size: clamp(1.7rem, 3.5vw, 2.5rem);
+    }
+
+    .cta-box p {
+      color: rgba(255, 255, 255, .88);
+      margin-bottom: 0;
+    }
+
+    /* ============================================================
    10. CONTACTO
    ============================================================ */
-.contact-info-card{
-  background:#fff;
-  border-radius:var(--radius);
-  padding:2rem;
-  box-shadow:var(--shadow);
-  height:100%;
-}
-.contact-item{
-  display:flex;
-  gap:1rem;
-  align-items:flex-start;
-  padding:1rem 0;
-  border-bottom:1px dashed #e2efec;
-}
-.contact-item:last-child{border-bottom:none;padding-bottom:0;}
-.contact-item .ic{
-  flex-shrink:0;
-  width:46px;height:46px;
-  border-radius:14px;
-  background:var(--brand-light);
-  color:var(--brand-dark);
-  display:grid;place-items:center;
-  font-size:1.2rem;
-}
-.contact-item h5{
-  font-size:.95rem;
-  margin-bottom:.15rem;
-  font-weight:700;
-}
-.contact-item p,.contact-item a{
-  font-size:.9rem;
-  margin-bottom:0;
-  color:var(--muted);
-  font-weight:600;
-}
-.contact-item a:hover{color:var(--brand);}
+    .contact-info-card {
+      background: #fff;
+      border-radius: var(--radius);
+      padding: 2rem;
+      box-shadow: var(--shadow);
+      height: 100%;
+    }
 
-.form-card{
-  background:#fff;
-  border-radius:var(--radius);
-  padding:2.2rem;
-  box-shadow:var(--shadow);
-}
-.form-label{
-  font-weight:700;
-  font-size:.88rem;
-  color:var(--ink);
-  margin-bottom:.4rem;
-}
-.form-control,.form-select{
-  border:2px solid #e4f0ed;
-  border-radius:14px;
-  padding:.75rem 1rem;
-  font-size:.95rem;
-  font-family:'Nunito',sans-serif;
-  transition:var(--transition);
-  background:#fbfefd;
-}
-.form-control:focus,.form-select:focus{
-  border-color:var(--brand);
-  box-shadow:0 0 0 4px rgba(13,148,136,.12);
-  background:#fff;
-}
-.form-control::placeholder{color:#a8bdba;}
+    .contact-item {
+      display: flex;
+      gap: 1rem;
+      align-items: flex-start;
+      padding: 1rem 0;
+      border-bottom: 1px dashed #e2efec;
+    }
 
-.map-wrap{
-  border-radius:var(--radius);
-  overflow:hidden;
-  box-shadow:var(--shadow);
-  height:100%;
-  min-height:300px;
-  background:#dff3ee;
-}
-.map-wrap iframe{width:100%;height:100%;min-height:300px;border:0;display:block;filter:grayscale(.15);}
+    .contact-item:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
 
-/* Horario */
-.schedule-list{list-style:none;padding:0;margin:0;}
-.schedule-list li{
-  display:flex;
-  justify-content:space-between;
-  padding:.55rem 0;
-  border-bottom:1px dashed #e2efec;
-  font-size:.9rem;
-  font-weight:600;
-}
-.schedule-list li:last-child{border-bottom:none;}
-.schedule-list .day{color:var(--ink);}
-.schedule-list .hours{color:var(--muted);}
-.schedule-list .closed{color:var(--accent);font-weight:800;}
-.schedule-list .open{color:#16a34a;font-weight:800;}
+    .contact-item .ic {
+      flex-shrink: 0;
+      width: 46px;
+      height: 46px;
+      border-radius: 14px;
+      background: var(--brand-light);
+      color: var(--brand-dark);
+      display: grid;
+      place-items: center;
+      font-size: 1.2rem;
+    }
 
-/* ============================================================
+    .contact-item h5 {
+      font-size: .95rem;
+      margin-bottom: .15rem;
+      font-weight: 700;
+    }
+
+    .contact-item p,
+    .contact-item a {
+      font-size: .9rem;
+      margin-bottom: 0;
+      color: var(--muted);
+      font-weight: 600;
+    }
+
+    .contact-item a:hover {
+      color: var(--brand);
+    }
+
+    .form-card {
+      background: #fff;
+      border-radius: var(--radius);
+      padding: 2.2rem;
+      box-shadow: var(--shadow);
+    }
+
+    .form-label {
+      font-weight: 700;
+      font-size: .88rem;
+      color: var(--ink);
+      margin-bottom: .4rem;
+    }
+
+    .form-control,
+    .form-select {
+      border: 2px solid #e4f0ed;
+      border-radius: 14px;
+      padding: .75rem 1rem;
+      font-size: .95rem;
+      font-family: 'Nunito', sans-serif;
+      transition: var(--transition);
+      background: #fbfefd;
+    }
+
+    .form-control:focus,
+    .form-select:focus {
+      border-color: var(--brand);
+      box-shadow: 0 0 0 4px rgba(13, 148, 136, .12);
+      background: #fff;
+    }
+
+    .form-control::placeholder {
+      color: #a8bdba;
+    }
+
+    .map-wrap {
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      height: 100%;
+      min-height: 300px;
+      background: #dff3ee;
+    }
+
+    .map-wrap iframe {
+      width: 100%;
+      height: 100%;
+      min-height: 300px;
+      border: 0;
+      display: block;
+      filter: grayscale(.15);
+    }
+
+    /* Horario */
+    .schedule-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .schedule-list li {
+      display: flex;
+      justify-content: space-between;
+      padding: .55rem 0;
+      border-bottom: 1px dashed #e2efec;
+      font-size: .9rem;
+      font-weight: 600;
+    }
+
+    .schedule-list li:last-child {
+      border-bottom: none;
+    }
+
+    .schedule-list .day {
+      color: var(--ink);
+    }
+
+    .schedule-list .hours {
+      color: var(--muted);
+    }
+
+    .schedule-list .closed {
+      color: var(--accent);
+      font-weight: 800;
+    }
+
+    .schedule-list .open {
+      color: #16a34a;
+      font-weight: 800;
+    }
+
+    /* ============================================================
    11. FOOTER
    ============================================================ */
-.footer{
-  background:#0f2e2a;
-  color:rgba(255,255,255,.72);
-  padding:70px 0 0;
-  margin-top:0;
-}
-.footer h5{
-  color:#fff;
-  font-size:1.05rem;
-  margin-bottom:1.2rem;
-  font-weight:700;
-}
-.footer a{
-  color:rgba(255,255,255,.72);
-  font-size:.92rem;
-  transition:var(--transition);
-  display:inline-block;
-}
-.footer a:hover{color:#5eead4;transform:translateX(4px);}
-.footer .brand-badge{box-shadow:none;}
-.footer-brand{
-  display:flex;align-items:center;gap:.7rem;
-  color:#fff;
-  font-family:'Baloo 2',cursive;
-  font-weight:800;
-  font-size:1.4rem;
-  margin-bottom:1rem;
-}
-.footer-links{list-style:none;padding:0;margin:0;}
-.footer-links li{margin-bottom:.6rem;}
-.social-row{display:flex;gap:.6rem;margin-top:1.2rem;}
-.social-row a{
-  width:42px;height:42px;
-  border-radius:12px;
-  background:rgba(255,255,255,.08);
-  display:grid;place-items:center;
-  color:#fff;
-  font-size:1.1rem;
-}
-.social-row a:hover{
-  background:var(--brand);
-  transform:translateY(-4px);
-  color:#fff;
-}
-.footer-bottom{
-  border-top:1px solid rgba(255,255,255,.1);
-  margin-top:50px;
-  padding:1.5rem 0;
-  font-size:.85rem;
-}
-.footer-bottom a{font-size:.85rem;}
+    .footer {
+      background: #0f2e2a;
+      color: rgba(255, 255, 255, .72);
+      padding: 70px 0 0;
+      margin-top: 0;
+    }
 
-/* ============================================================
+    .footer h5 {
+      color: #fff;
+      font-size: 1.05rem;
+      margin-bottom: 1.2rem;
+      font-weight: 700;
+    }
+
+    .footer a {
+      color: rgba(255, 255, 255, .72);
+      font-size: .92rem;
+      transition: var(--transition);
+      display: inline-block;
+    }
+
+    .footer a:hover {
+      color: #5eead4;
+      transform: translateX(4px);
+    }
+
+    .footer .brand-badge {
+      box-shadow: none;
+    }
+
+    .footer-brand {
+      display: flex;
+      align-items: center;
+      gap: .7rem;
+      color: #fff;
+      font-family: 'Baloo 2', cursive;
+      font-weight: 800;
+      font-size: 1.4rem;
+      margin-bottom: 1rem;
+    }
+
+    .footer-links {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .footer-links li {
+      margin-bottom: .6rem;
+    }
+
+    .social-row {
+      display: flex;
+      gap: .6rem;
+      margin-top: 1.2rem;
+    }
+
+    .social-row a {
+      width: 42px;
+      height: 42px;
+      border-radius: 12px;
+      background: rgba(255, 255, 255, .08);
+      display: grid;
+      place-items: center;
+      color: #fff;
+      font-size: 1.1rem;
+    }
+
+    .social-row a:hover {
+      background: var(--brand);
+      transform: translateY(-4px);
+      color: #fff;
+    }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(255, 255, 255, .1);
+      margin-top: 50px;
+      padding: 1.5rem 0;
+      font-size: .85rem;
+    }
+
+    .footer-bottom a {
+      font-size: .85rem;
+    }
+
+    /* ============================================================
    12. BOTONES FLOTANTES
    ============================================================ */
-.whatsapp-float{
-  position:fixed;
-  right:22px;
-  bottom:22px;
-  width:60px;height:60px;
-  border-radius:50%;
-  background:#25d366;
-  color:#fff;
-  display:grid;
-  place-items:center;
-  font-size:1.8rem;
-  z-index:1040;
-  box-shadow:0 10px 28px rgba(37,211,102,.45);
-  transition:var(--transition);
-  animation:wa-pulse 2.4s infinite;
-}
-.whatsapp-float:hover{
-  color:#fff;
-  transform:scale(1.1) rotate(6deg);
-  background:#1ebe5b;
-}
-@keyframes wa-pulse{
-  0%{box-shadow:0 10px 28px rgba(37,211,102,.45),0 0 0 0 rgba(37,211,102,.5);}
-  70%{box-shadow:0 10px 28px rgba(37,211,102,.45),0 0 0 18px rgba(37,211,102,0);}
-  100%{box-shadow:0 10px 28px rgba(37,211,102,.45),0 0 0 0 rgba(37,211,102,0);}
-}
+    .whatsapp-float {
+      position: fixed;
+      right: 22px;
+      bottom: 22px;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      background: #25d366;
+      color: #fff;
+      display: grid;
+      place-items: center;
+      font-size: 1.8rem;
+      z-index: 1040;
+      box-shadow: 0 10px 28px rgba(37, 211, 102, .45);
+      transition: var(--transition);
+      animation: wa-pulse 2.4s infinite;
+    }
 
-.to-top{
-  position:fixed;
-  right:22px;
-  bottom:94px;
-  width:46px;height:46px;
-  border-radius:50%;
-  background:var(--brand);
-  color:#fff;
-  border:none;
-  display:grid;
-  place-items:center;
-  font-size:1.2rem;
-  z-index:1039;
-  opacity:0;
-  visibility:hidden;
-  transform:translateY(12px);
-  transition:var(--transition);
-  box-shadow:0 8px 20px rgba(13,148,136,.35);
-}
-.to-top.show{opacity:1;visibility:visible;transform:translateY(0);}
-.to-top:hover{background:var(--brand-dark);color:#fff;}
+    .whatsapp-float:hover {
+      color: #fff;
+      transform: scale(1.1) rotate(6deg);
+      background: #1ebe5b;
+    }
 
-/* ============================================================
+    @keyframes wa-pulse {
+      0% {
+        box-shadow: 0 10px 28px rgba(37, 211, 102, .45), 0 0 0 0 rgba(37, 211, 102, .5);
+      }
+
+      70% {
+        box-shadow: 0 10px 28px rgba(37, 211, 102, .45), 0 0 0 18px rgba(37, 211, 102, 0);
+      }
+
+      100% {
+        box-shadow: 0 10px 28px rgba(37, 211, 102, .45), 0 0 0 0 rgba(37, 211, 102, 0);
+      }
+    }
+
+    .to-top {
+      position: fixed;
+      right: 22px;
+      bottom: 94px;
+      width: 46px;
+      height: 46px;
+      border-radius: 50%;
+      background: var(--brand);
+      color: #fff;
+      border: none;
+      display: grid;
+      place-items: center;
+      font-size: 1.2rem;
+      z-index: 1039;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(12px);
+      transition: var(--transition);
+      box-shadow: 0 8px 20px rgba(13, 148, 136, .35);
+    }
+
+    .to-top.show {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+
+    .to-top:hover {
+      background: var(--brand-dark);
+      color: #fff;
+    }
+
+    /* ============================================================
    13. ANIMACIONES DE ENTRADA
    ============================================================ */
-.reveal{
-  opacity:0;
-  transform:translateY(34px);
-  transition:opacity .75s ease, transform .75s ease;
-  will-change:opacity,transform;
-}
-.reveal.visible{opacity:1;transform:none;}
+    .reveal {
+      opacity: 0;
+      transform: translateY(34px);
+      transition: opacity .75s ease, transform .75s ease;
+      will-change: opacity, transform;
+    }
 
-@media (prefers-reduced-motion:reduce){
-  *,*::before,*::after{
-    animation-duration:.001ms!important;
-    animation-iteration-count:1!important;
-    transition-duration:.001ms!important;
-    scroll-behavior:auto!important;
-  }
-  .reveal{opacity:1;transform:none;}
-}
+    .reveal.visible {
+      opacity: 1;
+      transform: none;
+    }
 
-/* ============================================================
+    @media (prefers-reduced-motion:reduce) {
+
+      *,
+      *::before,
+      *::after {
+        animation-duration: .001ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: .001ms !important;
+        scroll-behavior: auto !important;
+      }
+
+      .reveal {
+        opacity: 1;
+        transform: none;
+      }
+    }
+
+    /* ============================================================
    14. RESPONSIVE
    ============================================================ */
-@media (max-width:991px){
-  .section{padding:70px 0;}
-  .cta-box{padding:2.5rem 1.6rem;text-align:center;}
-  .cta-box .btn{margin-top:.5rem;}
-}
-@media (max-width:575px){
-  .section{padding:58px 0;}
-  .hero{padding:125px 0 60px;}
-  .hero-card{padding:.7rem .9rem;font-size:.85rem;}
-  .hero-card i{font-size:1.2rem;}
-  .service-card{padding:1.7rem 1.3rem;}
-  .form-card,.contact-info-card{padding:1.5rem;}
-  .about-badge{padding:1rem 1.2rem;}
-  .about-badge .n{font-size:1.7rem;}
-  .whatsapp-float{width:54px;height:54px;font-size:1.6rem;right:16px;bottom:16px;}
-  .to-top{right:16px;bottom:82px;width:42px;height:42px;}
-}
-</style>
+    @media (max-width:991px) {
+      .section {
+        padding: 70px 0;
+      }
+
+      .cta-box {
+        padding: 2.5rem 1.6rem;
+        text-align: center;
+      }
+
+      .cta-box .btn {
+        margin-top: .5rem;
+      }
+    }
+
+    @media (max-width:575px) {
+      .section {
+        padding: 58px 0;
+      }
+
+      .hero {
+        padding: 125px 0 60px;
+      }
+
+      .hero-card {
+        padding: .7rem .9rem;
+        font-size: .85rem;
+      }
+
+      .hero-card i {
+        font-size: 1.2rem;
+      }
+
+      .service-card {
+        padding: 1.7rem 1.3rem;
+      }
+
+      .form-card,
+      .contact-info-card {
+        padding: 1.5rem;
+      }
+
+      .about-badge {
+        padding: 1rem 1.2rem;
+      }
+
+      .about-badge .n {
+        font-size: 1.7rem;
+      }
+
+      .whatsapp-float {
+        width: 54px;
+        height: 54px;
+        font-size: 1.6rem;
+        right: 16px;
+        bottom: 16px;
+      }
+
+      .to-top {
+        right: 16px;
+        bottom: 82px;
+        width: 42px;
+        height: 42px;
+      }
+    }
+
+    /* ============================================================
+   15. BOTÓN DE TEMA
+   ============================================================ */
+    .btn-theme {
+      width: 44px;
+      height: 44px;
+      border-radius: 14px;
+      border: 2px solid rgba(13, 148, 136, .25);
+      background: #fff;
+      color: var(--brand-dark);
+      display: grid;
+      place-items: center;
+      font-size: 1.05rem;
+      cursor: pointer;
+      transition: var(--transition);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .btn-theme:hover {
+      background: var(--brand);
+      color: #fff;
+      border-color: var(--brand);
+      transform: translateY(-2px) rotate(-8deg);
+    }
+
+    .btn-theme .icon-sun,
+    .btn-theme .icon-moon {
+      position: absolute;
+      transition: transform .45s cubic-bezier(.5, -.5, .3, 1.4), opacity .3s ease;
+    }
+
+    .btn-theme .icon-sun {
+      transform: translateY(140%) rotate(90deg);
+      opacity: 0;
+    }
+
+    .btn-theme .icon-moon {
+      transform: translateY(0) rotate(0);
+      opacity: 1;
+    }
+
+    [data-bs-theme="dark"] .btn-theme {
+      background: #132a27;
+      border-color: rgba(94, 234, 212, .35);
+      color: #5eead4;
+    }
+
+    [data-bs-theme="dark"] .btn-theme:hover {
+      background: var(--brand);
+      color: #fff;
+    }
+
+    [data-bs-theme="dark"] .btn-theme .icon-sun {
+      transform: translateY(0) rotate(0);
+      opacity: 1;
+    }
+
+    [data-bs-theme="dark"] .btn-theme .icon-moon {
+      transform: translateY(-140%) rotate(-90deg);
+      opacity: 0;
+    }
+
+    /* ============================================================
+   16. MODO OSCURO
+   ============================================================ */
+    [data-bs-theme="dark"] {
+      --bg: #0b1a18;
+      --white: #132a27;
+      --ink: #eaf7f4;
+      --muted: #9db8b3;
+      --brand-light: rgba(13, 148, 136, .18);
+      color-scheme: dark;
+    }
+
+    [data-bs-theme="dark"] body {
+      background: var(--bg);
+      color: var(--ink);
+    }
+
+    [data-bs-theme="dark"] p {
+      color: var(--muted);
+    }
+
+    /* Navbar */
+    [data-bs-theme="dark"] .navbar.scrolled {
+      background: rgba(11, 26, 24, .92);
+      box-shadow: 0 6px 26px rgba(0, 0, 0, .45);
+    }
+
+    [data-bs-theme="dark"] .navbar-brand {
+      color: var(--ink) !important;
+    }
+
+    [data-bs-theme="dark"] .navbar .nav-link {
+      color: var(--ink) !important;
+    }
+
+    [data-bs-theme="dark"] .navbar .nav-link.active {
+      color: #5eead4 !important;
+    }
+
+    [data-bs-theme="dark"] .navbar-toggler {
+      color: #5eead4;
+    }
+
+    [data-bs-theme="dark"] .navbar-collapse {
+      background: #132a27;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, .5);
+    }
+
+    /* Hero */
+    [data-bs-theme="dark"] .hero {
+      background: linear-gradient(180deg, #0e211e 0%, #0b1a18 100%);
+    }
+
+    [data-bs-theme="dark"] .hero h1 .highlight::after {
+      background: rgba(255, 122, 89, .35);
+    }
+
+    [data-bs-theme="dark"] .hero-badge {
+      background: #132a27;
+      color: #5eead4;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, .35);
+    }
+
+    [data-bs-theme="dark"] .trust-bar {
+      background: #132a27;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, .4);
+    }
+
+    [data-bs-theme="dark"] .trust-item .num {
+      color: var(--ink);
+    }
+
+    [data-bs-theme="dark"] .trust-item {
+      border-color: #1f3b37;
+    }
+
+    /* Tarjetas y secciones */
+    [data-bs-theme="dark"] .bg-soft {
+      background: linear-gradient(180deg, #0e211e 0%, #0b1a18 100%);
+    }
+
+    [data-bs-theme="dark"] .service-card,
+    [data-bs-theme="dark"] .team-card,
+    [data-bs-theme="dark"] .testimonial-card,
+    [data-bs-theme="dark"] .contact-info-card,
+    [data-bs-theme="dark"] .form-card {
+      background: #132a27;
+      border-color: rgba(94, 234, 212, .10);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, .35);
+    }
+
+    [data-bs-theme="dark"] .service-card:hover,
+    [data-bs-theme="dark"] .team-card:hover,
+    [data-bs-theme="dark"] .testimonial-card:hover {
+      box-shadow: 0 22px 55px rgba(0, 0, 0, .5);
+    }
+
+    [data-bs-theme="dark"] .service-card::before {
+      background: rgba(13, 148, 136, .22);
+    }
+
+    [data-bs-theme="dark"] .service-icon {
+      background: rgba(13, 148, 136, .2);
+      color: #5eead4;
+    }
+
+    [data-bs-theme="dark"] .service-card:hover .service-icon {
+      background: var(--brand);
+      color: #fff;
+    }
+
+    [data-bs-theme="dark"] .section-label {
+      background: rgba(13, 148, 136, .2);
+      color: #5eead4;
+    }
+
+    [data-bs-theme="dark"] .testimonial-card p {
+      color: #d5eae6;
+    }
+
+    [data-bs-theme="dark"] .testimonial-card .quote-icon {
+      color: rgba(94, 234, 212, .15);
+    }
+
+    [data-bs-theme="dark"] .team-photo {
+      background: linear-gradient(135deg, rgba(13, 148, 136, .2), rgba(20, 184, 166, .12));
+    }
+
+    [data-bs-theme="dark"] .team-photo .placeholder-icon {
+      color: #5eead4;
+      opacity: .55;
+    }
+
+    /* Listas y bordes */
+    [data-bs-theme="dark"] .check-list li {
+      color: var(--ink);
+    }
+
+    [data-bs-theme="dark"] .check-list li i {
+      background: rgba(13, 148, 136, .22);
+      color: #5eead4;
+    }
+
+    [data-bs-theme="dark"] .contact-item,
+    [data-bs-theme="dark"] .schedule-list li {
+      border-color: #1f3b37;
+    }
+
+    [data-bs-theme="dark"] .contact-item .ic {
+      background: rgba(13, 148, 136, .22);
+      color: #5eead4;
+    }
+
+    /* Formularios */
+    [data-bs-theme="dark"] .form-control,
+    [data-bs-theme="dark"] .form-select {
+      background: #0e211e;
+      border-color: #1f3b37;
+      color: var(--ink);
+    }
+
+    [data-bs-theme="dark"] .form-control:focus,
+    [data-bs-theme="dark"] .form-select:focus {
+      background: #0e211e;
+      border-color: var(--brand);
+      color: var(--ink);
+      box-shadow: 0 0 0 4px rgba(13, 148, 136, .22);
+    }
+
+    [data-bs-theme="dark"] .form-control::placeholder {
+      color: #6b8884;
+    }
+
+    [data-bs-theme="dark"] .form-select option {
+      background: #0e211e;
+      color: var(--ink);
+    }
+
+    /* Mapa */
+    [data-bs-theme="dark"] .map-wrap {
+      background: #0e211e;
+    }
+
+    [data-bs-theme="dark"] .map-wrap iframe {
+      filter: invert(.9) hue-rotate(180deg) saturate(.8);
+    }
+
+    /* Botones outline */
+    [data-bs-theme="dark"] .btn-outline-brand {
+      color: #5eead4;
+      border-color: #5eead4;
+    }
+
+    [data-bs-theme="dark"] .btn-outline-brand:hover {
+      background: #5eead4;
+      color: #0b1a18;
+    }
+
+    /* Footer (ya es oscuro, pero afinamos) */
+    [data-bs-theme="dark"] .footer {
+      background: #081412;
+    }
+
+    /* Flecha volver arriba */
+    [data-bs-theme="dark"] .to-top {
+      background: #14b8a6;
+    }
+
+    [data-bs-theme="dark"] .to-top:hover {
+      background: #0d9488;
+    }
+  </style>
 </head>
 
 <body data-bs-spy="scroll" data-bs-target="#mainNav" data-bs-root-margin="0px 0px -70%" tabindex="0">
 
-<!-- ============================================================
+  <!-- ============================================================
      NAVBAR
      ============================================================ -->
-<nav class="navbar navbar-expand-lg fixed-top" id="mainNav">
-  <div class="container">
-    <a class="navbar-brand" href="#inicio">
-      <span class="brand-badge"><i class="bi bi-heart-pulse-fill"></i></span>
-      <span class="brand-text">
-        Patitas
-        <small>Veterinaria</small>
-      </span>
-    </a>
+  <nav class="navbar navbar-expand-lg fixed-top" id="mainNav">
+    <div class="container">
+      <a class="navbar-brand" href="#inicio">
+        <span class="brand-badge"><i class="bi bi-heart-pulse-fill"></i></span>
+        <span class="brand-text">
+          Patitas
+          <small>Veterinaria</small>
+        </span>
+      </a>
 
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu"
-            aria-controls="navMenu" aria-expanded="false" aria-label="Abrir menú de navegación">
-      <i class="bi bi-list"></i>
-    </button>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu"
+        aria-controls="navMenu" aria-expanded="false" aria-label="Abrir menú de navegación">
+        <i class="bi bi-list"></i>
+      </button>
 
-    <div class="collapse navbar-collapse" id="navMenu">
-      <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-lg-center">
-        <li class="nav-item"><a class="nav-link active" href="#inicio">Inicio</a></li>
-        <li class="nav-item"><a class="nav-link" href="#servicios">Servicios</a></li>
-        <li class="nav-item"><a class="nav-link" href="#nosotros">Nosotros</a></li>
-        <li class="nav-item"><a class="nav-link" href="#equipo">Equipo</a></li>
-        <li class="nav-item"><a class="nav-link" href="#opiniones">Opiniones</a></li>
-        <li class="nav-item"><a class="nav-link" href="#contacto">Contacto</a></li>
-        <li class="nav-item ms-lg-3 mt-2 mt-lg-0">
-          <a class="btn btn-brand w-100" href="#contacto">
-            <i class="bi bi-calendar2-check me-1"></i> Pedir cita
-          </a>
-        </li>
-      </ul>
+      <div class="collapse navbar-collapse" id="navMenu">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-lg-center">
+          <li class="nav-item"><a class="nav-link active" href="#inicio">Inicio</a></li>
+          <li class="nav-item"><a class="nav-link" href="#servicios">Servicios</a></li>
+          <li class="nav-item"><a class="nav-link" href="#nosotros">Nosotros</a></li>
+          <li class="nav-item"><a class="nav-link" href="#equipo">Equipo</a></li>
+          <li class="nav-item"><a class="nav-link" href="#opiniones">Opiniones</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contacto">Contacto</a></li>
+          <li class="nav-item ms-lg-2 mt-2 mt-lg-0">
+            <button class="btn-theme" id="themeToggle" type="button" aria-label="Cambiar entre modo claro y oscuro"
+              title="Modo claro / oscuro">
+              <i class="bi bi-moon-stars-fill icon-moon"></i>
+              <i class="bi bi-sun-fill icon-sun"></i>
+            </button>
+          </li>
+          <li class="nav-item ms-lg-3 mt-2 mt-lg-0">
+            <a class="btn btn-brand w-100" href="#contacto">
+              <i class="bi bi-calendar2-check me-1"></i> Pedir cita
+            </a>
+          </li>
+        </ul>
+      </div>
     </div>
-  </div>
-</nav>
+  </nav>
 
-<!-- ============================================================
+  <!-- ============================================================
      HERO
      ============================================================ -->
-<header class="hero" id="inicio">
-  <div class="container">
-    <div class="row align-items-center g-5">
+  <header class="hero" id="inicio">
+    <div class="container">
+      <div class="row align-items-center g-5">
 
-      <div class="col-lg-6">
-        <div class="hero-badge reveal">
-          <span class="dot"></span> Abierto ahora · Urgencias 24 h
-        </div>
-
-        <h1 class="reveal" style="transition-delay:.08s">
-          Cuidamos de tu mascota como si fuera <span class="highlight">nuestra</span>
-        </h1>
-
-        <p class="lead reveal" style="transition-delay:.16s">
-          Somos la clínica veterinaria de tu barrio. Trato cercano, precios justos y
-          todo lo que tu perro o gato necesita: consultas, vacunas, cirugía y peluquería.
-        </p>
-
-        <div class="d-flex flex-wrap gap-3 reveal" style="transition-delay:.24s">
-          <a href="#contacto" class="btn btn-brand btn-lg">
-            <i class="bi bi-calendar2-heart me-2"></i>Reservar cita
-          </a>
-          <a href="tel:+34600123456" class="btn btn-outline-brand btn-lg">
-            <i class="bi bi-telephone-fill me-2"></i>600 123 456
-          </a>
-        </div>
-
-        <!-- Barra de confianza -->
-        <div class="trust-bar reveal" style="transition-delay:.32s">
-          <div class="row g-0">
-            <div class="col-6 col-md-3 trust-item">
-              <i class="bi bi-award"></i>
-              <div class="num" data-count="15" data-suffix="+">0</div>
-              <div class="lbl">Años de experiencia</div>
-            </div>
-            <div class="col-6 col-md-3 trust-item">
-              <i class="bi bi-emoji-smile"></i>
-              <div class="num" data-count="5000" data-suffix="+">0</div>
-              <div class="lbl">Pacientes felices</div>
-            </div>
-            <div class="col-6 col-md-3 trust-item">
-              <i class="bi bi-clock-history"></i>
-              <div class="num">24 h</div>
-              <div class="lbl">Urgencias</div>
-            </div>
-            <div class="col-6 col-md-3 trust-item">
-              <i class="bi bi-star"></i>
-              <div class="num">4,9</div>
-              <div class="lbl">Valoración vecinos</div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-lg-6">
-        <div class="hero-visual reveal" style="transition-delay:.2s">
-          <div class="hero-img-wrap">
-            <img src="https://images.unsplash.com/photo-1583337130417-3346a1be7dee?auto=format&fit=crop&w=900&q=80"
-                 alt="Perro atendido en la clínica veterinaria Patitas"
-                 onerror="this.style.display='none'">
+        <div class="col-lg-6">
+          <div class="hero-badge reveal">
+            <span class="dot"></span> Abierto ahora · Urgencias 24 h
           </div>
 
-          <div class="hero-card card-1">
-            <i class="bi bi-shield-check"></i>
-            <div>
-              <strong>Vacunas al día</strong>
-              <span>Calendario completo</span>
-            </div>
-          </div>
+          <h1 class="reveal" style="transition-delay:.08s">
+            Cuidamos de tu mascota como si fuera <span class="highlight">nuestra</span>
+          </h1>
 
-          <div class="hero-card card-2">
-            <i class="bi bi-scissors"></i>
-            <div>
-              <strong>Peluquería</strong>
-              <span>Baño y corte</span>
-            </div>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</header>
-
-<!-- ============================================================
-     SERVICIOS
-     ============================================================ -->
-<section class="section" id="servicios">
-  <div class="container">
-
-    <div class="text-center mb-5 reveal">
-      <span class="section-label"><i class="bi bi-grid-1x2-fill"></i> Nuestros servicios</span>
-      <h2 class="section-title">Todo lo que tu mascota necesita, en un solo sitio</h2>
-      <p class="section-subtitle">
-        Desde una revisión rutinaria hasta una urgencia a las 3 de la mañana.
-        Estamos a tu lado en cada etapa de su vida.
-      </p>
-    </div>
-
-    <div class="row g-4">
-
-      <div class="col-md-6 col-lg-4 reveal">
-        <div class="service-card">
-          <div class="service-icon"><i class="bi bi-clipboard2-pulse"></i></div>
-          <h3>Consultas y diagnóstico</h3>
-          <p>Revisión general, diagnóstico por imagen y análisis clínicos con resultados el mismo día.</p>
-          <a href="#contacto" class="service-link">Pedir cita <i class="bi bi-arrow-right"></i></a>
-        </div>
-      </div>
-
-      <div class="col-md-6 col-lg-4 reveal" style="transition-delay:.08s">
-        <div class="service-card">
-          <div class="service-icon"><i class="bi bi-shield-fill-check"></i></div>
-          <h3>Vacunación y desparasitación</h3>
-          <p>Calendario vacunal completo para cachorros y adultos, con recordatorios automáticos.</p>
-          <a href="#contacto" class="service-link">Pedir cita <i class="bi bi-arrow-right"></i></a>
-        </div>
-      </div>
-
-      <div class="col-md-6 col-lg-4 reveal" style="transition-delay:.16s">
-        <div class="service-card">
-          <div class="service-icon"><i class="bi bi-hospital"></i></div>
-          <h3>Cirugía y hospitalización</h3>
-          <p>Quirófano equipado y hospitalización con seguimiento veterinario las 24 horas.</p>
-          <a href="#contacto" class="service-link">Más información <i class="bi bi-arrow-right"></i></a>
-        </div>
-      </div>
-
-      <div class="col-md-6 col-lg-4 reveal">
-        <div class="service-card">
-          <div class="service-icon"><i class="bi bi-scissors"></i></div>
-          <h3>Peluquería y estética</h3>
-          <p>Baño, corte de raza, deslanado e higiene dental. Tu mascota sale como nueva.</p>
-          <a href="#contacto" class="service-link">Reservar <i class="bi bi-arrow-right"></i></a>
-        </div>
-      </div>
-
-      <div class="col-md-6 col-lg-4 reveal" style="transition-delay:.08s">
-        <div class="service-card">
-          <div class="service-icon"><i class="bi bi-droplet-half"></i></div>
-          <h3>Análisis y rayos X</h3>
-          <p>Laboratorio propio, ecografía y radiología digital para diagnósticos rápidos y precisos.</p>
-          <a href="#contacto" class="service-link">Más información <i class="bi bi-arrow-right"></i></a>
-        </div>
-      </div>
-
-      <div class="col-md-6 col-lg-4 reveal" style="transition-delay:.16s">
-        <div class="service-card">
-          <div class="service-icon"><i class="bi bi-heart-pulse"></i></div>
-          <h3>Urgencias 24 horas</h3>
-          <p>Guardia telefónica permanente. Llámanos y te atenderemos en el momento.</p>
-          <a href="tel:+34600123456" class="service-link">Llamar ahora <i class="bi bi-arrow-right"></i></a>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- ============================================================
-     NOSOTROS
-     ============================================================ -->
-<section class="section bg-soft" id="nosotros">
-  <div class="container">
-    <div class="row align-items-center g-5">
-
-      <div class="col-lg-6">
-        <div class="about-visual reveal">
-          <div class="about-img">
-            <img src="https://images.unsplash.com/photo-1628009368231-7bb7cfcb0def?auto=format&fit=crop&w=900&q=80"
-                 alt="Veterinaria examinando a un perro"
-                 onerror="this.style.display='none'">
-          </div>
-          <div class="about-badge">
-            <span class="n">15</span>
-            <span>años cuidando<br>a tus mascotas</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-lg-6">
-        <div class="reveal" style="transition-delay:.1s">
-          <span class="section-label"><i class="bi bi-house-heart-fill"></i> Quiénes somos</span>
-          <h2 class="section-title">La veterinaria de siempre, con la tecnología de hoy</h2>
-          <p>
-            Abrimos nuestra puerta en el barrio hace más de 15 años con una idea muy simple:
-            que llevar a tu mascota al veterinario no sea un trámite, sino un momento tranquilo.
-            Conocemos a nuestros pacientes por su nombre y a sus familias por su cara.
+          <p class="lead reveal" style="transition-delay:.16s">
+            Somos la clínica veterinaria de tu barrio. Trato cercano, precios justos y
+            todo lo que tu perro o gato necesita: consultas, vacunas, cirugía y peluquería.
           </p>
 
-          <ul class="check-list">
-            <li><i class="bi bi-check-lg"></i> <span><strong>Trato cercano y sin prisas:</strong> explicamos todo con palabras claras.</span></li>
-            <li><i class="bi bi-check-lg"></i> <span><strong>Precios justos y transparentes:</strong> presupuesto antes de cualquier tratamiento.</span></li>
-            <li><i class="bi bi-check-lg"></i> <span><strong>Tecnología propia:</strong> laboratorio y radiología en la misma clínica.</span></li>
-            <li><i class="bi bi-check-lg"></i> <span><strong>Siempre disponibles:</strong> guardia de urgencias las 24 horas.</span></li>
-          </ul>
+          <div class="d-flex flex-wrap gap-3 reveal" style="transition-delay:.24s">
+            <a href="#contacto" class="btn btn-brand btn-lg">
+              <i class="bi bi-calendar2-heart me-2"></i>Reservar cita
+            </a>
+            <a href="tel:+34600123456" class="btn btn-outline-brand btn-lg">
+              <i class="bi bi-telephone-fill me-2"></i>600 123 456
+            </a>
+          </div>
 
-          <a href="#contacto" class="btn btn-brand btn-lg">
-            <i class="bi bi-chat-heart me-2"></i>Habla con nosotros
-          </a>
+          <!-- Barra de confianza -->
+          <div class="trust-bar reveal" style="transition-delay:.32s">
+            <div class="row g-0">
+              <div class="col-6 col-md-3 trust-item">
+                <i class="bi bi-award"></i>
+                <div class="num" data-count="15" data-suffix="+">0</div>
+                <div class="lbl">Años de experiencia</div>
+              </div>
+              <div class="col-6 col-md-3 trust-item">
+                <i class="bi bi-emoji-smile"></i>
+                <div class="num" data-count="5000" data-suffix="+">0</div>
+                <div class="lbl">Pacientes felices</div>
+              </div>
+              <div class="col-6 col-md-3 trust-item">
+                <i class="bi bi-clock-history"></i>
+                <div class="num">24 h</div>
+                <div class="lbl">Urgencias</div>
+              </div>
+              <div class="col-6 col-md-3 trust-item">
+                <i class="bi bi-star"></i>
+                <div class="num">4,9</div>
+                <div class="lbl">Valoración vecinos</div>
+              </div>
+            </div>
+          </div>
         </div>
+
+        <div class="col-lg-6">
+          <div class="hero-visual reveal" style="transition-delay:.2s">
+            <div class="hero-img-wrap">
+              <img src="https://images.unsplash.com/photo-1583337130417-3346a1be7dee?auto=format&fit=crop&w=900&q=80"
+                alt="Perro atendido en la clínica veterinaria Patitas" onerror="this.style.display='none'">
+            </div>
+
+            <div class="hero-card card-1">
+              <i class="bi bi-shield-check"></i>
+              <div>
+                <strong>Vacunas al día</strong>
+                <span>Calendario completo</span>
+              </div>
+            </div>
+
+            <div class="hero-card card-2">
+              <i class="bi bi-scissors"></i>
+              <div>
+                <strong>Peluquería</strong>
+                <span>Baño y corte</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </header>
+
+  <!-- ============================================================
+     SERVICIOS
+     ============================================================ -->
+  <section class="section" id="servicios">
+    <div class="container">
+
+      <div class="text-center mb-5 reveal">
+        <span class="section-label"><i class="bi bi-grid-1x2-fill"></i> Nuestros servicios</span>
+        <h2 class="section-title">Todo lo que tu mascota necesita, en un solo sitio</h2>
+        <p class="section-subtitle">
+          Desde una revisión rutinaria hasta una urgencia a las 3 de la mañana.
+          Estamos a tu lado en cada etapa de su vida.
+        </p>
       </div>
 
-    </div>
-  </div>
-</section>
+      <div class="row g-4">
 
-<!-- ============================================================
+        <div class="col-md-6 col-lg-4 reveal">
+          <div class="service-card">
+            <div class="service-icon"><i class="bi bi-clipboard2-pulse"></i></div>
+            <h3>Consultas y diagnóstico</h3>
+            <p>Revisión general, diagnóstico por imagen y análisis clínicos con resultados el mismo día.</p>
+            <a href="#contacto" class="service-link">Pedir cita <i class="bi bi-arrow-right"></i></a>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4 reveal" style="transition-delay:.08s">
+          <div class="service-card">
+            <div class="service-icon"><i class="bi bi-shield-fill-check"></i></div>
+            <h3>Vacunación y desparasitación</h3>
+            <p>Calendario vacunal completo para cachorros y adultos, con recordatorios automáticos.</p>
+            <a href="#contacto" class="service-link">Pedir cita <i class="bi bi-arrow-right"></i></a>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4 reveal" style="transition-delay:.16s">
+          <div class="service-card">
+            <div class="service-icon"><i class="bi bi-hospital"></i></div>
+            <h3>Cirugía y hospitalización</h3>
+            <p>Quirófano equipado y hospitalización con seguimiento veterinario las 24 horas.</p>
+            <a href="#contacto" class="service-link">Más información <i class="bi bi-arrow-right"></i></a>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4 reveal">
+          <div class="service-card">
+            <div class="service-icon"><i class="bi bi-scissors"></i></div>
+            <h3>Peluquería y estética</h3>
+            <p>Baño, corte de raza, deslanado e higiene dental. Tu mascota sale como nueva.</p>
+            <a href="#contacto" class="service-link">Reservar <i class="bi bi-arrow-right"></i></a>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4 reveal" style="transition-delay:.08s">
+          <div class="service-card">
+            <div class="service-icon"><i class="bi bi-droplet-half"></i></div>
+            <h3>Análisis y rayos X</h3>
+            <p>Laboratorio propio, ecografía y radiología digital para diagnósticos rápidos y precisos.</p>
+            <a href="#contacto" class="service-link">Más información <i class="bi bi-arrow-right"></i></a>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4 reveal" style="transition-delay:.16s">
+          <div class="service-card">
+            <div class="service-icon"><i class="bi bi-heart-pulse"></i></div>
+            <h3>Urgencias 24 horas</h3>
+            <p>Guardia telefónica permanente. Llámanos y te atenderemos en el momento.</p>
+            <a href="tel:+34600123456" class="service-link">Llamar ahora <i class="bi bi-arrow-right"></i></a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+     NOSOTROS
+     ============================================================ -->
+  <section class="section bg-soft" id="nosotros">
+    <div class="container">
+      <div class="row align-items-center g-5">
+
+        <div class="col-lg-6">
+          <div class="about-visual reveal">
+            <div class="about-img">
+              <img src="https://images.unsplash.com/photo-1628009368231-7bb7cfcb0def?auto=format&fit=crop&w=900&q=80"
+                alt="Veterinaria examinando a un perro" onerror="this.style.display='none'">
+            </div>
+            <div class="about-badge">
+              <span class="n">15</span>
+              <span>años cuidando<br>a tus mascotas</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-6">
+          <div class="reveal" style="transition-delay:.1s">
+            <span class="section-label"><i class="bi bi-house-heart-fill"></i> Quiénes somos</span>
+            <h2 class="section-title">La veterinaria de siempre, con la tecnología de hoy</h2>
+            <p>
+              Abrimos nuestra puerta en el barrio hace más de 15 años con una idea muy simple:
+              que llevar a tu mascota al veterinario no sea un trámite, sino un momento tranquilo.
+              Conocemos a nuestros pacientes por su nombre y a sus familias por su cara.
+            </p>
+
+            <ul class="check-list">
+              <li><i class="bi bi-check-lg"></i> <span><strong>Trato cercano y sin prisas:</strong> explicamos todo con
+                  palabras claras.</span></li>
+              <li><i class="bi bi-check-lg"></i> <span><strong>Precios justos y transparentes:</strong> presupuesto
+                  antes de cualquier tratamiento.</span></li>
+              <li><i class="bi bi-check-lg"></i> <span><strong>Tecnología propia:</strong> laboratorio y radiología en
+                  la misma clínica.</span></li>
+              <li><i class="bi bi-check-lg"></i> <span><strong>Siempre disponibles:</strong> guardia de urgencias las 24
+                  horas.</span></li>
+            </ul>
+
+            <a href="#contacto" class="btn btn-brand btn-lg">
+              <i class="bi bi-chat-heart me-2"></i>Habla con nosotros
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
      EQUIPO
      ============================================================ -->
-<section class="section" id="equipo">
-  <div class="container">
+  <section class="section" id="equipo">
+    <div class="container">
 
-    <div class="text-center mb-5 reveal">
-      <span class="section-label"><i class="bi bi-people-fill"></i> Nuestro equipo</span>
-      <h2 class="section-title">Personas que aman lo que hacen</h2>
-      <p class="section-subtitle">
-        Un equipo pequeño y estable: siempre te atenderá la misma cara de confianza.
-      </p>
+      <div class="text-center mb-5 reveal">
+        <span class="section-label"><i class="bi bi-people-fill"></i> Nuestro equipo</span>
+        <h2 class="section-title">Personas que aman lo que hacen</h2>
+        <p class="section-subtitle">
+          Un equipo pequeño y estable: siempre te atenderá la misma cara de confianza.
+        </p>
+      </div>
+
+      <div class="row g-4 justify-content-center">
+
+        <div class="col-sm-6 col-lg-4 reveal">
+          <div class="team-card">
+            <div class="team-photo">
+              <i class="bi bi-person-fill placeholder-icon"></i>
+            </div>
+            <div class="team-body">
+              <h4>Dra. Lucía Fernández</h4>
+              <span class="role">Directora · Medicina interna</span>
+              <p>Especialista en diagnóstico clínico y medicina felina. Fundadora de la clínica.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm-6 col-lg-4 reveal" style="transition-delay:.1s">
+          <div class="team-card">
+            <div class="team-photo">
+              <i class="bi bi-person-fill placeholder-icon"></i>
+            </div>
+            <div class="team-body">
+              <h4>Dr. Marcos Ruiz</h4>
+              <span class="role">Cirugía y traumatología</span>
+              <p>Más de 10 años operando con técnicas mínimamente invasivas y recuperación rápida.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm-6 col-lg-4 reveal" style="transition-delay:.2s">
+          <div class="team-card">
+            <div class="team-photo">
+              <i class="bi bi-person-fill placeholder-icon"></i>
+            </div>
+            <div class="team-body">
+              <h4>Ana Torres</h4>
+              <span class="role">Auxiliar veterinaria · Peluquería</span>
+              <p>La mano que calma a los más nerviosos. Baños, cortes y mucho cariño.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
     </div>
+  </section>
 
-    <div class="row g-4 justify-content-center">
-
-      <div class="col-sm-6 col-lg-4 reveal">
-        <div class="team-card">
-          <div class="team-photo">
-            <i class="bi bi-person-fill placeholder-icon"></i>
-          </div>
-          <div class="team-body">
-            <h4>Dra. Lucía Fernández</h4>
-            <span class="role">Directora · Medicina interna</span>
-            <p>Especialista en diagnóstico clínico y medicina felina. Fundadora de la clínica.</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-sm-6 col-lg-4 reveal" style="transition-delay:.1s">
-        <div class="team-card">
-          <div class="team-photo">
-            <i class="bi bi-person-fill placeholder-icon"></i>
-          </div>
-          <div class="team-body">
-            <h4>Dr. Marcos Ruiz</h4>
-            <span class="role">Cirugía y traumatología</span>
-            <p>Más de 10 años operando con técnicas mínimamente invasivas y recuperación rápida.</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-sm-6 col-lg-4 reveal" style="transition-delay:.2s">
-        <div class="team-card">
-          <div class="team-photo">
-            <i class="bi bi-person-fill placeholder-icon"></i>
-          </div>
-          <div class="team-body">
-            <h4>Ana Torres</h4>
-            <span class="role">Auxiliar veterinaria · Peluquería</span>
-            <p>La mano que calma a los más nerviosos. Baños, cortes y mucho cariño.</p>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- ============================================================
+  <!-- ============================================================
      OPINIONES
      ============================================================ -->
-<section class="section bg-soft" id="opiniones">
-  <div class="container">
+  <section class="section bg-soft" id="opiniones">
+    <div class="container">
 
-    <div class="text-center mb-5 reveal">
-      <span class="section-label"><i class="bi bi-chat-quote-fill"></i> Opiniones</span>
-      <h2 class="section-title">Lo que dicen nuestros vecinos</h2>
-      <p class="section-subtitle">Más de 5.000 familias del barrio ya confían en nosotros.</p>
+      <div class="text-center mb-5 reveal">
+        <span class="section-label"><i class="bi bi-chat-quote-fill"></i> Opiniones</span>
+        <h2 class="section-title">Lo que dicen nuestros vecinos</h2>
+        <p class="section-subtitle">Más de 5.000 familias del barrio ya confían en nosotros.</p>
+      </div>
+
+      <div class="row g-4">
+
+        <div class="col-md-6 col-lg-4 reveal">
+          <div class="testimonial-card">
+            <i class="bi bi-quote quote-icon"></i>
+            <div class="stars">
+              <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+            </div>
+            <p>"Llevé a mi gata de urgencia un domingo por la noche y nos atendieron en 10 minutos. Nos salvaron la
+              vida, literalmente."</p>
+            <div class="testimonial-author">
+              <div class="avatar">MR</div>
+              <div>
+                <strong>Marta R.</strong>
+                <span>Dueña de "Nube" 🐱</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4 reveal" style="transition-delay:.1s">
+          <div class="testimonial-card">
+            <i class="bi bi-quote quote-icon"></i>
+            <div class="stars">
+              <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+            </div>
+            <p>"Explican todo con muchísima paciencia y nunca te meten prisas ni tratamientos de más. Se nota que
+              quieren a los animales."</p>
+            <div class="testimonial-author">
+              <div class="avatar">JL</div>
+              <div>
+                <strong>Javier L.</strong>
+                <span>Dueño de "Toby" 🐶</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4 reveal" style="transition-delay:.2s">
+          <div class="testimonial-card">
+            <i class="bi bi-quote quote-icon"></i>
+            <div class="stars">
+              <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i><i class="bi bi-star-half"></i>
+            </div>
+            <p>"El servicio de peluquería es genial. Mi perra entra temblando y sale feliz, moviendo la cola. Precio muy
+              razonable."</p>
+            <div class="testimonial-author">
+              <div class="avatar">CS</div>
+              <div>
+                <strong>Carla S.</strong>
+                <span>Dueña de "Luna" 🐩</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
     </div>
+  </section>
 
-    <div class="row g-4">
-
-      <div class="col-md-6 col-lg-4 reveal">
-        <div class="testimonial-card">
-          <i class="bi bi-quote quote-icon"></i>
-          <div class="stars">
-            <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
-            <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
-          </div>
-          <p>"Llevé a mi gata de urgencia un domingo por la noche y nos atendieron en 10 minutos. Nos salvaron la vida, literalmente."</p>
-          <div class="testimonial-author">
-            <div class="avatar">MR</div>
-            <div>
-              <strong>Marta R.</strong>
-              <span>Dueña de "Nube" 🐱</span>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-md-6 col-lg-4 reveal" style="transition-delay:.1s">
-        <div class="testimonial-card">
-          <i class="bi bi-quote quote-icon"></i>
-          <div class="stars">
-            <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
-            <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
-          </div>
-          <p>"Explican todo con muchísima paciencia y nunca te meten prisas ni tratamientos de más. Se nota que quieren a los animales."</p>
-          <div class="testimonial-author">
-            <div class="avatar">JL</div>
-            <div>
-              <strong>Javier L.</strong>
-              <span>Dueño de "Toby" 🐶</span>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-md-6 col-lg-4 reveal" style="transition-delay:.2s">
-        <div class="testimonial-card">
-          <i class="bi bi-quote quote-icon"></i>
-          <div class="stars">
-            <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
-            <i class="bi bi-star-fill"></i><i class="bi bi-star-half"></i>
-          </div>
-          <p>"El servicio de peluquería es genial. Mi perra entra temblando y sale feliz, moviendo la cola. Precio muy razonable."</p>
-          <div class="testimonial-author">
-            <div class="avatar">CS</div>
-            <div>
-              <strong>Carla S.</strong>
-              <span>Dueña de "Luna" 🐩</span>
-            </div>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- ============================================================
+  <!-- ============================================================
      CTA
      ============================================================ -->
-<section class="section-sm">
-  <div class="container">
-    <div class="cta-box reveal">
-      <div class="row align-items-center g-4">
-        <div class="col-lg-8">
-          <h2 class="mb-3">¿Primera visita? La consulta de bienvenida va por nuestra cuenta 🎁</h2>
-          <p>Trae a tu mascota y la revisamos sin coste. Solo queremos conoceros y que os sintáis como en casa.</p>
-        </div>
-        <div class="col-lg-4 text-lg-end">
-          <a href="#contacto" class="btn btn-accent btn-lg w-100 w-lg-auto">
-            <i class="bi bi-calendar2-heart me-2"></i>Reservar ahora
-          </a>
+  <section class="section-sm">
+    <div class="container">
+      <div class="cta-box reveal">
+        <div class="row align-items-center g-4">
+          <div class="col-lg-8">
+            <h2 class="mb-3">¿Primera visita? La consulta de bienvenida va por nuestra cuenta 🎁</h2>
+            <p>Trae a tu mascota y la revisamos sin coste. Solo queremos conoceros y que os sintáis como en casa.</p>
+          </div>
+          <div class="col-lg-4 text-lg-end">
+            <a href="#contacto" class="btn btn-accent btn-lg w-100 w-lg-auto">
+              <i class="bi bi-calendar2-heart me-2"></i>Reservar ahora
+            </a>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- ============================================================
+  <!-- ============================================================
      CONTACTO
      ============================================================ -->
-<section class="section" id="contacto">
-  <div class="container">
+  <section class="section" id="contacto">
+    <div class="container">
 
-    <div class="text-center mb-5 reveal">
-      <span class="section-label"><i class="bi bi-geo-alt-fill"></i> Contacto</span>
-      <h2 class="section-title">Pide tu cita en un minuto</h2>
-      <p class="section-subtitle">
-        Rellena el formulario y te confirmamos por teléfono o WhatsApp el mismo día.
-      </p>
-    </div>
-
-    <div class="row g-4">
-
-      <!-- Info -->
-      <div class="col-lg-4">
-        <div class="contact-info-card reveal">
-          <h4 class="mb-4" style="font-size:1.2rem;">Datos de la clínica</h4>
-
-          <div class="contact-item">
-            <div class="ic"><i class="bi bi-geo-alt-fill"></i></div>
-            <div>
-              <h5>Dirección</h5>
-              <p>Calle Los Almendros, 24<br>Barrio San José</p>
-            </div>
-          </div>
-
-          <div class="contact-item">
-            <div class="ic"><i class="bi bi-telephone-fill"></i></div>
-            <div>
-              <h5>Teléfono</h5>
-              <a href="tel:+34600123456">+34 600 123 456</a>
-            </div>
-          </div>
-
-          <div class="contact-item">
-            <div class="ic"><i class="bi bi-envelope-fill"></i></div>
-            <div>
-              <h5>Email</h5>
-              <a href="mailto:hola@veterinariapatitas.com">hola@veterinariapatitas.com</a>
-            </div>
-          </div>
-
-          <div class="contact-item">
-            <div class="ic"><i class="bi bi-clock-fill"></i></div>
-            <div class="w-100">
-              <h5 class="mb-2">Horario</h5>
-              <ul class="schedule-list">
-                <li><span class="day">Lunes a Viernes</span> <span class="hours">9:00 – 20:00</span></li>
-                <li><span class="day">Sábado</span> <span class="hours">10:00 – 14:00</span></li>
-                <li><span class="day">Domingo</span> <span class="closed">Cerrado*</span></li>
-                <li><span class="day">Urgencias</span> <span class="open">24 h</span></li>
-              </ul>
-              <small class="text-muted d-block mt-2" style="font-size:.78rem;">
-                *Guardia telefónica permanente para urgencias.
-              </small>
-            </div>
-          </div>
-
-          <a href="https://wa.me/34600123456?text=Hola%2C%20quiero%20pedir%20cita%20para%20mi%20mascota"
-             target="_blank" rel="noopener" class="btn btn-brand w-100 mt-4">
-            <i class="bi bi-whatsapp me-2"></i>Escríbenos por WhatsApp
-          </a>
-        </div>
+      <div class="text-center mb-5 reveal">
+        <span class="section-label"><i class="bi bi-geo-alt-fill"></i> Contacto</span>
+        <h2 class="section-title">Pide tu cita en un minuto</h2>
+        <p class="section-subtitle">
+          Rellena el formulario y te confirmamos por teléfono o WhatsApp el mismo día.
+        </p>
       </div>
 
-      <!-- Formulario -->
-      <div class="col-lg-8">
-        <div class="form-card reveal" style="transition-delay:.1s">
+      <div class="row g-4">
 
-          <form id="citaForm" novalidate>
-            <div class="row g-3">
+        <!-- Info -->
+        <div class="col-lg-4">
+          <div class="contact-info-card reveal">
+            <h4 class="mb-4" style="font-size:1.2rem;">Datos de la clínica</h4>
 
-              <div class="col-md-6">
-                <label for="nombre" class="form-label">Tu nombre *</label>
-                <input type="text" class="form-control" id="nombre" name="nombre"
-                       placeholder="Ej. María López" required>
-                <div class="invalid-feedback">Por favor, escribe tu nombre.</div>
+            <div class="contact-item">
+              <div class="ic"><i class="bi bi-geo-alt-fill"></i></div>
+              <div>
+                <h5>Dirección</h5>
+                <p>Calle Los Almendros, 24<br>Barrio San José</p>
               </div>
+            </div>
 
-              <div class="col-md-6">
-                <label for="telefono" class="form-label">Teléfono *</label>
-                <input type="tel" class="form-control" id="telefono" name="telefono"
-                       placeholder="Ej. 600 123 456" pattern="[0-9\s\+\-\(\)]{9,20}" required>
-                <div class="invalid-feedback">Introduce un teléfono válido (mínimo 9 dígitos).</div>
+            <div class="contact-item">
+              <div class="ic"><i class="bi bi-telephone-fill"></i></div>
+              <div>
+                <h5>Teléfono</h5>
+                <a href="tel:+34600123456">+34 600 123 456</a>
               </div>
+            </div>
 
-              <div class="col-md-6">
-                <label for="email" class="form-label">Email</label>
-                <input type="email" class="form-control" id="email" name="email"
-                       placeholder="tucorreo@ejemplo.com">
-                <div class="invalid-feedback">Introduce un email válido.</div>
+            <div class="contact-item">
+              <div class="ic"><i class="bi bi-envelope-fill"></i></div>
+              <div>
+                <h5>Email</h5>
+                <a href="mailto:hola@veterinariapatitas.com">hola@veterinariapatitas.com</a>
               </div>
+            </div>
 
-              <div class="col-md-6">
-                <label for="mascota" class="form-label">Nombre de tu mascota</label>
-                <input type="text" class="form-control" id="mascota" name="mascota"
-                       placeholder="Ej. Toby">
+            <div class="contact-item">
+              <div class="ic"><i class="bi bi-clock-fill"></i></div>
+              <div class="w-100">
+                <h5 class="mb-2">Horario</h5>
+                <ul class="schedule-list">
+                  <li><span class="day">Lunes a Viernes</span> <span class="hours">9:00 – 20:00</span></li>
+                  <li><span class="day">Sábado</span> <span class="hours">10:00 – 14:00</span></li>
+                  <li><span class="day">Domingo</span> <span class="closed">Cerrado*</span></li>
+                  <li><span class="day">Urgencias</span> <span class="open">24 h</span></li>
+                </ul>
+                <small class="text-muted d-block mt-2" style="font-size:.78rem;">
+                  *Guardia telefónica permanente para urgencias.
+                </small>
               </div>
+            </div>
 
-              <div class="col-md-6">
-                <label for="especie" class="form-label">Tipo de mascota *</label>
-                <select class="form-select" id="especie" name="especie" required>
-                  <option value="" selected disabled>Selecciona una opción…</option>
-                  <option value="perro">Perro 🐶</option>
-                  <option value="gato">Gato 🐱</option>
-                  <option value="conejo">Conejo / Roedor 🐰</option>
-                  <option value="ave">Ave 🦜</option>
-                  <option value="otro">Otro</option>
-                </select>
-                <div class="invalid-feedback">Selecciona el tipo de mascota.</div>
-              </div>
+            <a href="https://wa.me/34600123456?text=Hola%2C%20quiero%20pedir%20cita%20para%20mi%20mascota"
+              target="_blank" rel="noopener" class="btn btn-brand w-100 mt-4">
+              <i class="bi bi-whatsapp me-2"></i>Escríbenos por WhatsApp
+            </a>
+          </div>
+        </div>
 
-              <div class="col-md-6">
-                <label for="servicio" class="form-label">Servicio *</label>
-                <select class="form-select" id="servicio" name="servicio" required>
-                  <option value="" selected disabled>¿Qué necesitas?</option>
-                  <option>Consulta general</option>
-                  <option>Vacunación / Desparasitación</option>
-                  <option>Cirugía</option>
-                  <option>Peluquería y estética</option>
-                  <option>Análisis / Rayos X</option>
-                  <option>Urgencia</option>
-                </select>
-                <div class="invalid-feedback">Selecciona un servicio.</div>
-              </div>
+        <!-- Formulario -->
+        <div class="col-lg-8">
+          <div class="form-card reveal" style="transition-delay:.1s">
 
-              <div class="col-md-6">
-                <label for="fecha" class="form-label">Fecha preferida *</label>
-                <input type="date" class="form-control" id="fecha" name="fecha" required>
-                <div class="invalid-feedback">Elige una fecha.</div>
-              </div>
+            <form id="citaForm" novalidate>
+              <div class="row g-3">
 
-              <div class="col-md-6">
-                <label for="hora" class="form-label">Franja horaria</label>
-                <select class="form-select" id="hora" name="hora">
-                  <option value="" selected>Indiferente</option>
-                  <option>Mañana (9:00 – 13:00)</option>
-                  <option>Tarde (16:00 – 20:00)</option>
-                </select>
-              </div>
-
-              <div class="col-12">
-                <label for="mensaje" class="form-label">Cuéntanos algo más</label>
-                <textarea class="form-control" id="mensaje" name="mensaje" rows="4"
-                          placeholder="Síntomas, dudas, si es la primera visita…"></textarea>
-              </div>
-
-              <div class="col-12">
-                <div class="form-check">
-                  <input class="form-check-input" type="checkbox" id="privacidad" required>
-                  <label class="form-check-label" for="privacidad" style="font-size:.88rem;">
-                    Acepto la <a href="#" class="text-brand fw-bold">política de privacidad</a> y el tratamiento de mis datos. *
-                  </label>
-                  <div class="invalid-feedback">Debes aceptar la política de privacidad.</div>
+                <div class="col-md-6">
+                  <label for="nombre" class="form-label">Tu nombre *</label>
+                  <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Ej. María López"
+                    required>
+                  <div class="invalid-feedback">Por favor, escribe tu nombre.</div>
                 </div>
-              </div>
 
-              <div class="col-12 d-grid d-sm-flex gap-2 mt-2">
-                <button type="submit" class="btn btn-brand btn-lg">
-                  <i class="bi bi-send-fill me-2"></i>Enviar solicitud
-                </button>
-                <button type="reset" class="btn btn-outline-brand btn-lg">
-                  <i class="bi bi-arrow-counterclockwise me-2"></i>Limpiar
-                </button>
-              </div>
+                <div class="col-md-6">
+                  <label for="telefono" class="form-label">Teléfono *</label>
+                  <input type="tel" class="form-control" id="telefono" name="telefono" placeholder="Ej. 600 123 456"
+                    pattern="[0-9\s\+\-\(\)]{9,20}" required>
+                  <div class="invalid-feedback">Introduce un teléfono válido (mínimo 9 dígitos).</div>
+                </div>
 
+                <div class="col-md-6">
+                  <label for="email" class="form-label">Email</label>
+                  <input type="email" class="form-control" id="email" name="email" placeholder="tucorreo@ejemplo.com">
+                  <div class="invalid-feedback">Introduce un email válido.</div>
+                </div>
+
+                <div class="col-md-6">
+                  <label for="mascota" class="form-label">Nombre de tu mascota</label>
+                  <input type="text" class="form-control" id="mascota" name="mascota" placeholder="Ej. Toby">
+                </div>
+
+                <div class="col-md-6">
+                  <label for="especie" class="form-label">Tipo de mascota *</label>
+                  <select class="form-select" id="especie" name="especie" required>
+                    <option value="" selected disabled>Selecciona una opción…</option>
+                    <option value="perro">Perro 🐶</option>
+                    <option value="gato">Gato 🐱</option>
+                    <option value="conejo">Conejo / Roedor 🐰</option>
+                    <option value="ave">Ave 🦜</option>
+                    <option value="otro">Otro</option>
+                  </select>
+                  <div class="invalid-feedback">Selecciona el tipo de mascota.</div>
+                </div>
+
+                <div class="col-md-6">
+                  <label for="servicio" class="form-label">Servicio *</label>
+                  <select class="form-select" id="servicio" name="servicio" required>
+                    <option value="" selected disabled>¿Qué necesitas?</option>
+                    <option>Consulta general</option>
+                    <option>Vacunación / Desparasitación</option>
+                    <option>Cirugía</option>
+                    <option>Peluquería y estética</option>
+                    <option>Análisis / Rayos X</option>
+                    <option>Urgencia</option>
+                  </select>
+                  <div class="invalid-feedback">Selecciona un servicio.</div>
+                </div>
+
+                <div class="col-md-6">
+                  <label for="fecha" class="form-label">Fecha preferida *</label>
+                  <input type="date" class="form-control" id="fecha" name="fecha" required>
+                  <div class="invalid-feedback">Elige una fecha.</div>
+                </div>
+
+                <div class="col-md-6">
+                  <label for="hora" class="form-label">Franja horaria</label>
+                  <select class="form-select" id="hora" name="hora">
+                    <option value="" selected>Indiferente</option>
+                    <option>Mañana (9:00 – 13:00)</option>
+                    <option>Tarde (16:00 – 20:00)</option>
+                  </select>
+                </div>
+
+                <div class="col-12">
+                  <label for="mensaje" class="form-label">Cuéntanos algo más</label>
+                  <textarea class="form-control" id="mensaje" name="mensaje" rows="4"
+                    placeholder="Síntomas, dudas, si es la primera visita…"></textarea>
+                </div>
+
+                <div class="col-12">
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="privacidad" required>
+                    <label class="form-check-label" for="privacidad" style="font-size:.88rem;">
+                      Acepto la <a href="#" class="text-brand fw-bold">política de privacidad</a> y el tratamiento de
+                      mis datos. *
+                    </label>
+                    <div class="invalid-feedback">Debes aceptar la política de privacidad.</div>
+                  </div>
+                </div>
+
+                <div class="col-12 d-grid d-sm-flex gap-2 mt-2">
+                  <button type="submit" class="btn btn-brand btn-lg">
+                    <i class="bi bi-send-fill me-2"></i>Enviar solicitud
+                  </button>
+                  <button type="reset" class="btn btn-outline-brand btn-lg">
+                    <i class="bi bi-arrow-counterclockwise me-2"></i>Limpiar
+                  </button>
+                </div>
+
+              </div>
+            </form>
+
+            <!-- Mensaje de éxito -->
+            <div id="formSuccess" class="alert alert-success mt-4 mb-0 d-none" role="alert"
+              style="border-radius:16px;border:none;background:#dcfce7;color:#166534;">
+              <i class="bi bi-check-circle-fill me-2"></i>
+              <strong>¡Solicitud enviada!</strong> Te llamaremos en breve para confirmar tu cita. 🐾
             </div>
-          </form>
+          </div>
 
-          <!-- Mensaje de éxito -->
-          <div id="formSuccess" class="alert alert-success mt-4 mb-0 d-none" role="alert"
-               style="border-radius:16px;border:none;background:#dcfce7;color:#166534;">
-            <i class="bi bi-check-circle-fill me-2"></i>
-            <strong>¡Solicitud enviada!</strong> Te llamaremos en breve para confirmar tu cita. 🐾
+          <!-- Mapa -->
+          <div class="map-wrap mt-4 reveal" style="transition-delay:.2s">
+            <iframe
+              src="https://www.openstreetmap.org/export/embed.html?bbox=-3.7150%2C40.4080%2C-3.6850%2C40.4230&layer=mapnik&marker=40.4155%2C-3.7000"
+              title="Mapa de ubicación de la Veterinaria Patitas" loading="lazy">
+            </iframe>
           </div>
         </div>
 
-        <!-- Mapa -->
-        <div class="map-wrap mt-4 reveal" style="transition-delay:.2s">
-          <iframe
-            src="https://www.openstreetmap.org/export/embed.html?bbox=-3.7150%2C40.4080%2C-3.6850%2C40.4230&layer=mapnik&marker=40.4155%2C-3.7000"
-            title="Mapa de ubicación de la Veterinaria Patitas"
-            loading="lazy">
-          </iframe>
-        </div>
       </div>
-
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- ============================================================
+  <!-- ============================================================
      FOOTER
      ============================================================ -->
-<footer class="footer">
-  <div class="container">
-    <div class="row g-4">
+  <footer class="footer">
+    <div class="container">
+      <div class="row g-4">
 
-      <div class="col-lg-4 col-md-6">
-        <div class="footer-brand">
-          <span class="brand-badge"><i class="bi bi-heart-pulse-fill"></i></span>
-          Patitas
+        <div class="col-lg-4 col-md-6">
+          <div class="footer-brand">
+            <span class="brand-badge"><i class="bi bi-heart-pulse-fill"></i></span>
+            Patitas
+          </div>
+          <p style="color:rgba(255,255,255,.7);font-size:.92rem;">
+            Clínica veterinaria de barrio. Cuidamos de tus mascotas con cariño,
+            profesionalidad y precios justos desde 2010.
+          </p>
+          <div class="social-row">
+            <a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+            <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+            <a href="#" aria-label="TikTok"><i class="bi bi-tiktok"></i></a>
+            <a href="https://wa.me/34600123456" target="_blank" rel="noopener" aria-label="WhatsApp"><i
+                class="bi bi-whatsapp"></i></a>
+          </div>
         </div>
-        <p style="color:rgba(255,255,255,.7);font-size:.92rem;">
-          Clínica veterinaria de barrio. Cuidamos de tus mascotas con cariño,
-          profesionalidad y precios justos desde 2010.
-        </p>
-        <div class="social-row">
-          <a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
-          <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
-          <a href="#" aria-label="TikTok"><i class="bi bi-tiktok"></i></a>
-          <a href="https://wa.me/34600123456" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="bi bi-whatsapp"></i></a>
+
+        <div class="col-lg-2 col-md-6 col-6">
+          <h5>Navegación</h5>
+          <ul class="footer-links">
+            <li><a href="#inicio">Inicio</a></li>
+            <li><a href="#servicios">Servicios</a></li>
+            <li><a href="#nosotros">Nosotros</a></li>
+            <li><a href="#equipo">Equipo</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-3 col-md-6 col-6">
+          <h5>Servicios</h5>
+          <ul class="footer-links">
+            <li><a href="#servicios">Consultas</a></li>
+            <li><a href="#servicios">Vacunación</a></li>
+            <li><a href="#servicios">Cirugía</a></li>
+            <li><a href="#servicios">Peluquería</a></li>
+            <li><a href="#servicios">Urgencias 24 h</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-3 col-md-6">
+          <h5>Contacto</h5>
+          <ul class="footer-links">
+            <li><a href="#"><i class="bi bi-geo-alt-fill me-2"></i>Calle Los Almendros, 24</a></li>
+            <li><a href="tel:+34600123456"><i class="bi bi-telephone-fill me-2"></i>+34 600 123 456</a></li>
+            <li><a href="mailto:hola@veterinariapatitas.com"><i
+                  class="bi bi-envelope-fill me-2"></i>hola@veterinariapatitas.com</a></li>
+            <li><a href="#contacto"><i class="bi bi-clock-fill me-2"></i>L–V 9:00–20:00 · S 10:00–14:00</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <div class="row align-items-center g-2">
+          <div class="col-md-6 text-center text-md-start">
+            © <span id="year">2025</span> Veterinaria Patitas. Todos los derechos reservados.
+          </div>
+          <div class="col-md-6 text-center text-md-end">
+            <a href="#" class="me-3">Aviso legal</a>
+            <a href="#" class="me-3">Privacidad</a>
+            <a href="#">Cookies</a>
+          </div>
         </div>
       </div>
-
-      <div class="col-lg-2 col-md-6 col-6">
-        <h5>Navegación</h5>
-        <ul class="footer-links">
-          <li><a href="#inicio">Inicio</a></li>
-          <li><a href="#servicios">Servicios</a></li>
-          <li><a href="#nosotros">Nosotros</a></li>
-          <li><a href="#equipo">Equipo</a></li>
-          <li><a href="#contacto">Contacto</a></li>
-        </ul>
-      </div>
-
-      <div class="col-lg-3 col-md-6 col-6">
-        <h5>Servicios</h5>
-        <ul class="footer-links">
-          <li><a href="#servicios">Consultas</a></li>
-          <li><a href="#servicios">Vacunación</a></li>
-          <li><a href="#servicios">Cirugía</a></li>
-          <li><a href="#servicios">Peluquería</a></li>
-          <li><a href="#servicios">Urgencias 24 h</a></li>
-        </ul>
-      </div>
-
-      <div class="col-lg-3 col-md-6">
-        <h5>Contacto</h5>
-        <ul class="footer-links">
-          <li><a href="#"><i class="bi bi-geo-alt-fill me-2"></i>Calle Los Almendros, 24</a></li>
-          <li><a href="tel:+34600123456"><i class="bi bi-telephone-fill me-2"></i>+34 600 123 456</a></li>
-          <li><a href="mailto:hola@veterinariapatitas.com"><i class="bi bi-envelope-fill me-2"></i>hola@veterinariapatitas.com</a></li>
-          <li><a href="#contacto"><i class="bi bi-clock-fill me-2"></i>L–V 9:00–20:00 · S 10:00–14:00</a></li>
-        </ul>
-      </div>
-
     </div>
+  </footer>
 
-    <div class="footer-bottom">
-      <div class="row align-items-center g-2">
-        <div class="col-md-6 text-center text-md-start">
-          © <span id="year">2025</span> Veterinaria Patitas. Todos los derechos reservados.
-        </div>
-        <div class="col-md-6 text-center text-md-end">
-          <a href="#" class="me-3">Aviso legal</a>
-          <a href="#" class="me-3">Privacidad</a>
-          <a href="#">Cookies</a>
-        </div>
-      </div>
-    </div>
-  </div>
-</footer>
-
-<!-- ============================================================
+  <!-- ============================================================
      BOTONES FLOTANTES
      ============================================================ -->
-<a href="https://wa.me/34600123456?text=Hola%2C%20quiero%20pedir%20cita%20para%20mi%20mascota"
-   class="whatsapp-float" target="_blank" rel="noopener" aria-label="Contactar por WhatsApp">
-  <i class="bi bi-whatsapp"></i>
-</a>
+  <a href="https://wa.me/34600123456?text=Hola%2C%20quiero%20pedir%20cita%20para%20mi%20mascota" class="whatsapp-float"
+    target="_blank" rel="noopener" aria-label="Contactar por WhatsApp">
+    <i class="bi bi-whatsapp"></i>
+  </a>
 
-<button class="to-top" id="toTop" aria-label="Volver arriba">
-  <i class="bi bi-arrow-up"></i>
-</button>
+  <button class="to-top" id="toTop" aria-label="Volver arriba">
+    <i class="bi bi-arrow-up"></i>
+  </button>
 
-<!-- ============================================================
+  <!-- ============================================================
      SCRIPTS
      ============================================================ -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-<script>
-(function () {
-  'use strict';
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    (function () {
+      'use strict';
 
-  /* ----------------------------------------------------------
-     1. NAVBAR: fondo al hacer scroll + link activo + botón top
-     ---------------------------------------------------------- */
-  const nav       = document.getElementById('mainNav');
-  const toTop     = document.getElementById('toTop');
-  const navLinks  = document.querySelectorAll('.navbar .nav-link[href^="#"]');
-  const sections  = Array.from(document.querySelectorAll('section[id], header[id]'));
+      /* ----------------------------------------------------------
+         1. NAVBAR: fondo al hacer scroll + link activo + botón top
+         ---------------------------------------------------------- */
+      const nav = document.getElementById('mainNav');
+      const toTop = document.getElementById('toTop');
+      const navLinks = document.querySelectorAll('.navbar .nav-link[href^="#"]');
+      const sections = Array.from(document.querySelectorAll('section[id], header[id]'));
 
-  function onScroll() {
-    const y = window.scrollY;
+      function onScroll() {
+        const y = window.scrollY;
 
-    // Fondo de la navbar
-    nav.classList.toggle('scrolled', y > 40);
+        // Fondo de la navbar
+        nav.classList.toggle('scrolled', y > 40);
 
-    // Botón "volver arriba"
-    toTop.classList.toggle('show', y > 500);
+        // Botón "volver arriba"
+        toTop.classList.toggle('show', y > 500);
 
-    // Link activo según la sección visible
-    const pos = y + 150;
-    let current = '';
-    sections.forEach(function (sec) {
-      if (pos >= sec.offsetTop) current = sec.id;
-    });
+        // Link activo según la sección visible
+        const pos = y + 150;
+        let current = '';
+        sections.forEach(function (sec) {
+          if (pos >= sec.offsetTop) current = sec.id;
+        });
 
-    navLinks.forEach(function (link) {
-      link.classList.toggle('active', link.getAttribute('href') === '#' + current);
-    });
-  }
-
-  window.addEventListener('scroll', onScroll, { passive: true });
-  onScroll();
-
-  // Volver arriba
-  toTop.addEventListener('click', function () {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  });
-
-  /* ----------------------------------------------------------
-     2. CERRAR MENÚ MÓVIL AL HACER CLIC EN UN ENLACE
-     ---------------------------------------------------------- */
-  const collapseEl = document.getElementById('navMenu');
-  document.querySelectorAll('#navMenu .nav-link, #navMenu .btn').forEach(function (link) {
-    link.addEventListener('click', function () {
-      if (collapseEl.classList.contains('show')) {
-        bootstrap.Collapse.getOrCreateInstance(collapseEl).hide();
-      }
-    });
-  });
-
-  /* ----------------------------------------------------------
-     3. ANIMACIONES DE ENTRADA (IntersectionObserver)
-     ---------------------------------------------------------- */
-  const revealEls = document.querySelectorAll('.reveal');
-
-  if ('IntersectionObserver' in window) {
-    const revealObserver = new IntersectionObserver(function (entries) {
-      entries.forEach(function (entry) {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-          revealObserver.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
-
-    revealEls.forEach(function (el) { revealObserver.observe(el); });
-  } else {
-    revealEls.forEach(function (el) { el.classList.add('visible'); });
-  }
-
-  /* ----------------------------------------------------------
-     4. CONTADORES ANIMADOS
-     ---------------------------------------------------------- */
-  const counters = document.querySelectorAll('[data-count]');
-
-  function animateCounter(el) {
-    const target   = parseInt(el.dataset.count, 10);
-    const suffix   = el.dataset.suffix || '';
-    const duration = 1600;
-    const start    = performance.now();
-
-    function step(now) {
-      const progress = Math.min((now - start) / duration, 1);
-      // easing out
-      const eased = 1 - Math.pow(1 - progress, 3);
-      const value = Math.floor(eased * target);
-      el.textContent = value.toLocaleString('es-ES') + suffix;
-      if (progress < 1) requestAnimationFrame(step);
-      else el.textContent = target.toLocaleString('es-ES') + suffix;
-    }
-    requestAnimationFrame(step);
-  }
-
-  if ('IntersectionObserver' in window && counters.length) {
-    const counterObserver = new IntersectionObserver(function (entries) {
-      entries.forEach(function (entry) {
-        if (entry.isIntersecting) {
-          animateCounter(entry.target);
-          counterObserver.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.5 });
-
-    counters.forEach(function (el) { counterObserver.observe(el); });
-  }
-
-  /* ----------------------------------------------------------
-     5. FORMULARIO DE CITA
-     ---------------------------------------------------------- */
-  const form    = document.getElementById('citaForm');
-  const success = document.getElementById('formSuccess');
-  const fecha   = document.getElementById('fecha');
-
-  // Fecha mínima = hoy
-  if (fecha) {
-    const today = new Date().toISOString().split('T')[0];
-    fecha.setAttribute('min', today);
-  }
-
-  if (form) {
-    form.addEventListener('submit', function (e) {
-      e.preventDefault();
-      e.stopPropagation();
-
-      if (!form.checkValidity()) {
-        form.classList.add('was-validated');
-        const firstInvalid = form.querySelector(':invalid');
-        if (firstInvalid) {
-          firstInvalid.scrollIntoView({ behavior: 'smooth', block: 'center' });
-          firstInvalid.focus({ preventScroll: true });
-        }
-        return;
+        navLinks.forEach(function (link) {
+          link.classList.toggle('active', link.getAttribute('href') === '#' + current);
+        });
       }
 
-      // Simulación de envío
-      const btn = form.querySelector('button[type="submit"]');
-      const originalHTML = btn.innerHTML;
-      btn.disabled = true;
-      btn.innerHTML = '<span class="spinner-border spinner-border-sm me-2"></span>Enviando…';
+      window.addEventListener('scroll', onScroll, { passive: true });
+      onScroll();
 
-      setTimeout(function () {
-        btn.disabled = false;
-        btn.innerHTML = originalHTML;
+      // Volver arriba
+      toTop.addEventListener('click', function () {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
 
-        form.classList.remove('was-validated');
-        form.reset();
-        success.classList.remove('d-none');
-        success.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      /* ----------------------------------------------------------
+         2. CERRAR MENÚ MÓVIL AL HACER CLIC EN UN ENLACE
+         ---------------------------------------------------------- */
+      const collapseEl = document.getElementById('navMenu');
+      document.querySelectorAll('#navMenu .nav-link, #navMenu .btn').forEach(function (link) {
+        link.addEventListener('click', function () {
+          if (collapseEl.classList.contains('show')) {
+            bootstrap.Collapse.getOrCreateInstance(collapseEl).hide();
+          }
+        });
+      });
 
-        setTimeout(function () {
+      /* ----------------------------------------------------------
+         3. ANIMACIONES DE ENTRADA (IntersectionObserver)
+         ---------------------------------------------------------- */
+      const revealEls = document.querySelectorAll('.reveal');
+
+      if ('IntersectionObserver' in window) {
+        const revealObserver = new IntersectionObserver(function (entries) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('visible');
+              revealObserver.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
+
+        revealEls.forEach(function (el) { revealObserver.observe(el); });
+      } else {
+        revealEls.forEach(function (el) { el.classList.add('visible'); });
+      }
+
+      /* ----------------------------------------------------------
+         4. CONTADORES ANIMADOS
+         ---------------------------------------------------------- */
+      const counters = document.querySelectorAll('[data-count]');
+
+      function animateCounter(el) {
+        const target = parseInt(el.dataset.count, 10);
+        const suffix = el.dataset.suffix || '';
+        const duration = 1600;
+        const start = performance.now();
+
+        function step(now) {
+          const progress = Math.min((now - start) / duration, 1);
+          // easing out
+          const eased = 1 - Math.pow(1 - progress, 3);
+          const value = Math.floor(eased * target);
+          el.textContent = value.toLocaleString('es-ES') + suffix;
+          if (progress < 1) requestAnimationFrame(step);
+          else el.textContent = target.toLocaleString('es-ES') + suffix;
+        }
+        requestAnimationFrame(step);
+      }
+
+      if ('IntersectionObserver' in window && counters.length) {
+        const counterObserver = new IntersectionObserver(function (entries) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+              animateCounter(entry.target);
+              counterObserver.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.5 });
+
+        counters.forEach(function (el) { counterObserver.observe(el); });
+      }
+
+      /* ----------------------------------------------------------
+         5. FORMULARIO DE CITA
+         ---------------------------------------------------------- */
+      const form = document.getElementById('citaForm');
+      const success = document.getElementById('formSuccess');
+      const fecha = document.getElementById('fecha');
+
+      // Fecha mínima = hoy
+      if (fecha) {
+        const today = new Date().toISOString().split('T')[0];
+        fecha.setAttribute('min', today);
+      }
+
+      if (form) {
+        form.addEventListener('submit', function (e) {
+          e.preventDefault();
+          e.stopPropagation();
+
+          if (!form.checkValidity()) {
+            form.classList.add('was-validated');
+            const firstInvalid = form.querySelector(':invalid');
+            if (firstInvalid) {
+              firstInvalid.scrollIntoView({ behavior: 'smooth', block: 'center' });
+              firstInvalid.focus({ preventScroll: true });
+            }
+            return;
+          }
+
+          // Simulación de envío
+          const btn = form.querySelector('button[type="submit"]');
+          const originalHTML = btn.innerHTML;
+          btn.disabled = true;
+          btn.innerHTML = '<span class="spinner-border spinner-border-sm me-2"></span>Enviando…';
+
+          setTimeout(function () {
+            btn.disabled = false;
+            btn.innerHTML = originalHTML;
+
+            form.classList.remove('was-validated');
+            form.reset();
+            success.classList.remove('d-none');
+            success.scrollIntoView({ behavior: 'smooth', block: 'center' });
+
+            setTimeout(function () {
+              success.classList.add('d-none');
+            }, 7000);
+          }, 1300);
+        });
+
+        // Limpiar estado de validación al resetear
+        form.addEventListener('reset', function () {
+          form.classList.remove('was-validated');
           success.classList.add('d-none');
-        }, 7000);
-      }, 1300);
+        });
+      }
+
+      /* ----------------------------------------------------------
+         6. AÑO DINÁMICO EN EL FOOTER
+         ---------------------------------------------------------- */
+      const yearEl = document.getElementById('year');
+      if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+    })();
+    /* ----------------------------------------------------------
+   7. MODO OSCURO / CLARO
+   ---------------------------------------------------------- */
+    const html = document.documentElement;
+    const themeBtn = document.getElementById('themeToggle');
+    const STORAGE_KEY = 'patitas-theme';
+
+    function aplicarTema(tema) {
+      html.setAttribute('data-bs-theme', tema);
+      if (themeBtn) {
+        themeBtn.setAttribute('aria-pressed', tema === 'dark');
+      }
+    }
+
+    // 1) Preferencia guardada > 2) Preferencia del sistema > 3) Claro
+    const guardado = localStorage.getItem(STORAGE_KEY);
+    const prefiereOscuro = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    aplicarTema(guardado || (prefiereOscuro ? 'dark' : 'light'));
+
+    // Toggle
+    if (themeBtn) {
+      themeBtn.addEventListener('click', function () {
+        const actual = html.getAttribute('data-bs-theme');
+        const nuevo = actual === 'dark' ? 'light' : 'dark';
+        aplicarTema(nuevo);
+        localStorage.setItem(STORAGE_KEY, nuevo);
+      });
+    }
+
+    // Reaccionar a cambios del sistema (si el usuario no ha forzado nada)
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', function (e) {
+      if (!localStorage.getItem(STORAGE_KEY)) {
+        aplicarTema(e.matches ? 'dark' : 'light');
+      }
     });
-
-    // Limpiar estado de validación al resetear
-    form.addEventListener('reset', function () {
-      form.classList.remove('was-validated');
-      success.classList.add('d-none');
-    });
-  }
-
-  /* ----------------------------------------------------------
-     6. AÑO DINÁMICO EN EL FOOTER
-     ---------------------------------------------------------- */
-  const yearEl = document.getElementById('year');
-  if (yearEl) yearEl.textContent = new Date().getFullYear();
-
-})();
-</script>
+  </script>
 
 </body>
+
 </html>
